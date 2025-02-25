@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola</h1>
+    <p class="parrafo1" name="parr1">Hola a "tós"</p>
+    <p class="parrafo1" name="parr2">Hola a "tós"</p>
+    <button onclick="cambiarText()">Ejecutar JS2</button>
+</body>
+<script>
+
+function cambiarText() {
+    // devuelve htmlcollection que es como si fuese un array
+    console.log(document.getElementsByClassName('parrafo1'));
+    let elementos = document.getElementsByClassName('parrafo1')
+    // elementos[0].innerHTML = "Primero"
+    elementos[1].innerHTML = "Segundo"
+    // devuelve nodelist que es como si fuese un array
+    console.log(document.getElementsByName("parr1"))
+    let nombre = document.getElementsByName("parr1")
+    nombre[0].innerHTML = "cambiado primero"
+}
+</script>
+</html>

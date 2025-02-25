@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    margin: auto;
+    transition: 1s;
+}
+form {
+    margin: auto;
+    width: 30%;
+    background-color: aqua;
+    color: blueviolet;
+    border: 2px solid grey;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    padding: 20px;
+    gap: 15px;
+    transition: 2s;
+
+    @starting-style {
+        transform: rotate(720deg);
+        translate: -500px;
+    }
+}
+input:hover {
+    transform: rotate(-10deg);
+}
+#acepta:checked+button:hover {
+
+}
+
+</style>
+</head>
+<body>
+    <form action="">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+        
+        <label for="estado">Esto Civil</label>
+        <select name="estado" id="estado">
+            <option value="c">Casado</option>
+            <option value="s">Soltero</option>
+            <option value="d">Divorciado</option>
+            <option value="seyt">Si eso ya tal ...</option>
+        </select>
+
+        <label for="aceptar">Enviar</label>
+        <input type="checkbox" name="acepta" id="acepta">
+
+        <button>Aceptar</button>
+    </form>
+</body>
+</html>

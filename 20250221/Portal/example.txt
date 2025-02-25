@@ -1,0 +1,1 @@
+{"txtNombre":"ana","correo":"b@pepe.com","txtTelefono":"943123456","numExperiencia":"1","selectTxtPuesto":"albañil"}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body {
+    margin: auto;
+    width: 50%
+}
+h1 {
+    text-align: center;
+    background-color: aqua;
+    position: sticky;
+    top: 0;
+    margin: 0;
+}
+form {
+    width: 50%;
+    /* display: grid;
+    grid-template-columns: 30% 60%;
+    align-items: center;
+    gap: 15px; */
+    padding: 25px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+}  
+input, select, textarea {
+    min-width: 65px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+button {
+    min-width: 55px;
+}
+input[type=radio] {
+    text-align: left;
+    color: red;
+    background-color: aqua;
+}
+</style>
+</head>
+<body>
+    <h1>Formulario de Registro de Estudiantes</h1>
+    <!-- podría valer /login.php  -->
+    <form action="/login" method="POST" onsubmit="return validarForm();">
+        <label for="txtNombre">Nombre<sup>*</sup></label><br>
+        <input type="text" name="txtNombre" id="txtNombre" placeholder="nombre ..."><br>
+
+        <label for="edad">Edad</label><br>
+        <input type="number" name="edad" id="edad"><br>
+
+        <label for="fechaNacimiento">Fecha nacimiento:</label><br>
+        <input type="date" name="fechaNacimiento" id="fechaNacimiento"><br>
+
+        <label for="genero">Genero</label><br>
+        <input type="radio" name="genero" id="genero">Hombre
+        <input type="radio" name="genero" id="genero">Mujer
+        <input type="radio" name="genero" id="genero">Otro
+
+        <label for="carrera">Carrera</label><br>
+        <select name="carrera" id="carrera">
+            <option value="Ingeniero">Ingeniero</option>
+            <option value="Psicologo">Psicólogo</option>
+            <option value="Matematico">Matemático</option>
+            <option value="Informatico">Matemático</option>
+        </select><br>
+
+        <label for="correo">Corredo</label><br>
+        <input type="email" name="correo" id="correo"><br>
+
+        <label for="direccion">Dirección</label><br>
+        <textarea name="direccion" id="" rows="3"></textarea><br>
+
+        <button type="submit">Enviar</button><br>
+    </form>
+<script>
+function validarForm() {
+    console.log("validando...")
+    textErrores = ""
+    correo = document.querySelector("#correo")
+    debugger
+    if (document.querySelector("#txtNombre").value ==='') {
+        textErrores += "Nombre vacío\n"
+    }
+    if (document.querySelector("#edad").value === '' ||
+        document.querySelector("#edad").value <= '0'){
+        textErrores += "Edad incorrecta (min 1, max 99)\n"
+    }
+    if (document.querySelector("#correo").value.length <= 7) {
+        textErrores += "Correo incorrecto\n"
+    }
+    if (textErrores === "") return true
+
+    alert(`Hay un problema con los datos:\n ${textErrores}`)
+    return false
+}
+</script>
+</body>
+</html>

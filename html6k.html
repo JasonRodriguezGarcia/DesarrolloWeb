@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1 {
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke: 2px black;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+    text-align: left;
+}
+
+table tr td, table th {
+    border: 2px solid black;
+    border-spacing: 10px;
+    padding: 10px 20px; 
+}
+
+table tr:nth-child(1) {
+    background-color: rgb(85, 173, 85);
+    color: white;
+}
+tr:nth-child(odd) {
+    background-color: rgb(209, 217, 226)  ;
+}
+
+tr th:nth-child(1) {
+    width: 150px;
+}
+tr th:nth-child(2) {
+    width: 50px;
+}
+tr th:nth-child(3) {
+    width: 80px;
+}
+tr th:nth-child(4) {
+    width: 200px;
+}
+table tr:last-child {
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <h1><i class="fa-solid fa-dollar-sign"></i>CLIENTES<i class="fa-solid fa-dollar-sign"></i></h1>
+    <table>
+        <!-- <thead> -->
+
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Ciudad</th>
+            <th>Email</th>
+        </tr>
+        <!-- </thead> -->
+
+        <!-- <tbody> -->
+        <tr>
+            <td>Juan</td>
+            <td>35</td>
+            <td>Madrid</td>
+            <td>juan@huan.com</td>
+        </tr>
+        <tr>
+            <td>Maria</td>
+            <td>28</td>
+            <td>Barcelona</td>
+            <td>maria@maria.com</td>
+        </tr>
+        <tr>
+            <td>Carlos</td>
+            <td>40</td>
+            <td>Valencia</td>
+            <td>carlos@example.com</td>
+        </tr>
+        <!-- </tbody> -->
+        <!-- <footer> -->    
+        <tr>
+            <td colspan="3">Total clientes</td>
+            <!-- <td></td>
+            <td></td> -->
+            <td>3</td>
+        </tr>
+        <!-- </footer> -->
+    </table>
+</body>
+</html>

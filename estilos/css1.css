@@ -1,0 +1,22 @@
+/* color.abobe.com/es/create/color-wheel */
+/* https://paletton.com/ */
+h1 {
+    color: red;
+    text-align: center;
+}
+.div1 {
+    background-color: #bffbfb;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.div2 {
+    background-color: lightgray;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid blue;
+    border-radius: 15px;
+    width: 25%;
+    min-width: 132px;
+
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+
+::placeholder {
+    color: blue;
+    font-size: 12px;
+    font-style: italic;
+    background-color: antiquewhite;
+}
+
+body {
+    margin: 0;
+    background-color: bisque;
+    perspective: 950px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    transform: rotatex(45deg);
+}
+input[type="text"], input[type="password"] {
+    border-radius: 5px;
+}
+input[type="submit"]:hover {
+    box-shadow: 0 0 25px 25px grey;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 100px 70% ;
+    align-items: center;
+    width: 30%;
+    height: 140px;
+    gap: 10px;
+    padding: 50px;
+    border: 2px solid;
+    border-radius: 5px;
+    margin: auto;
+    background-color: beige;
+    box-shadow: 15px 15px 20px 15px;
+    /* https://www.youtube.com/watch?app=desktop&v=xIixFvHqjSY&t=456s */
+    transform: rotatex(25deg);
+}
+
+label {
+    font-weight: bold;
+}
+@media (max-width: 830px) {
+    body {
+
+        form {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        width: fit-content;
+        }
+    } 
+}
+
+</style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST" action="/login">
+        <label for="txtNombre">Nombre:</label>
+        <input type="text" name="txtNombre" id="txtNombre" placeholder="nombre...">
+
+        <label for="txtContraseña">Contraseña</label>
+        <input type="password" name="txtContraseña" id="txtContraseña" placeholder="contraseña ...">
+
+        <input type="submit" value="Submit Me">
+    </form>
+</body>
+</html>

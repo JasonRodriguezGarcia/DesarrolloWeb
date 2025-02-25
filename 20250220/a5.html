@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mi título</h1>
+    <p id="p1">Mi párrafo</p>
+    <div>
+        <p>Otro párrafo</p>
+    </div>
+    <button id="boton1">Clickar!!</button>
+    <button onclick="crearParrafo()">Clickar!!</button>
+    <button onclick="crearLI()">Clickar!!</button>
+    <button onclick="añadirFila()">Clickar!!</button>
+
+    <ul id="listaPaises">
+        <li>Spain zero points...</li>
+        <li>Australian corner ...</li>
+    </ul>
+
+    <table border id="table1">
+        <tr>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>C</td>
+        </tr>
+    </table>
+</body>
+<script>
+
+
+document.getElementById("boton1").addEventListener("click", clickado)
+// document.getElementById("boton1").addEventListener("mouseover", (e)=>{
+
+// })
+// document.getElementById("boton1").addEventListener("mouseout", clickado)
+
+function clickado() {
+    parrafo = document.querySelector("p")
+    console.log(parrafo.innerHTML)
+    alert(parrafo.innerHTML)
+}
+function crearParrafo() {
+    let nuevoParrafo = document.createElement("p")
+    nuevoParrafo.innerHTML = "Mi nuevo párrafo"
+    nuevoParrafo.style.color = "red"
+    nuevoParrafo.style.border = "1px solid black"
+    nuevoParrafo.style.padding = "10px blue"
+    nuevoParrafo.style.width = "20%"
+    nuevoParrafo.style.textAlign = "center"
+    document.body.appendChild(nuevoParrafo)
+    let miDiv = document.querySelector("div")
+    miDiv.appendChild(nuevoParrafo)
+}
+function crearLI2() {
+    miLI = document.createElement("li")
+    miLI.innerHTML = window.prompt()
+    miLI.innerHTML += window.prompt()
+    document.querySelector("ul").appendChild(miLI)
+
+}
+function crearLI() {
+    miUL = document.querySelector("#listaPaises")
+    pais = window.prompt()
+    miUL.innerHTML += `
+        <li>${pais}</li>
+    `
+    nuevoLI = document.createElement("li")
+    nuevoLI.innerHTML = document.querySelector("#listaPaises:last-child").innerHTML
+    miUL.appendChild(nuevoLI)
+}
+function añadirFila2() {
+    let tabla1 = document.getElementById("#table1")
+    let fila =  tabla1.insertRow();
+    let celda = row.insertCell();
+    c1.innerHTML = "NEW row"
+}
+function añadirFila(){
+    tabla = document.querySelector("#table1")
+    tabla.innerHTML += `
+        <tr>
+            <td>DATA new</td>
+        </tr>
+    `
+}
+
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Content Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+        .magic-box {
+            border: 2px solid #4CAF50;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 300px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🔮 Click the buttons to reveal the magic messages! 🔮</h2>
+
+    <!-- Using getElementById -->
+    <div class="magic-box">
+        <p id="myParagraph">This is a hidden clue.</p>
+        <button id="boton1" onclick="cambiaParrafo(1)">Click me to reveal a secret</button>
+    </div>
+
+    <!-- Using getElementsByClassName -->
+    <div class="magic-box">
+        <p class="myClass">This is a hidden clue.</p>
+        <p class="myClass">This is another hidden clue.</p>
+        <button id="boton2" onclick="cambiaParrafo(2)">Click me to reveal more secrets</button>
+    </div>
+
+    <!-- Using querySelectorAll -->
+    <div class="magic-box">
+        <p class="myQueryClass">This is a hidden clue.</p>
+        <p class="myQueryClass">This is another hidden clue.</p>
+        <button id="boton3" onclick="cambiaParrafo(3)">Click me to reveal the final hint</button>
+    </div>
+
+<script>
+    let secretRevealed1 = false
+    let secretRevealed2 = false
+    let secretRevealed3 = false
+    function cambiaParrafo(numeroParrafo) {
+        let miAudio = new Audio("./sonidos/tada.mp3")
+        if (numeroParrafo == 1) {
+            let parrafo1 = document.getElementById("myParagraph")
+            parrafo1.innerHTML = "👀A magician never reveals his secrets ... or does he?"
+            parrafo1.style.color = "blue"
+            parrafo1.parentElement.style.backgroundColor = "lightgreen"
+            let boton1 = document.querySelector("#boton1")
+            boton1.innerHTML ="Secret revealed !!"
+            if (!secretRevealed1)
+                miAudio.play()
+            secretRevealed1 = true
+            return true
+        }
+        if (numeroParrafo == 2) {
+            let parrafo2 = document.getElementsByClassName("myClass")
+            parrafo2[0].innerHTML = "🌳Clue #1: Look under the old oak tree!"
+            parrafo2[0].style.color = "red"
+            parrafo2[0].parentElement.style.backgroundColor = "lightgreen"
+            parrafo2[1].innerHTML = "📖Clue #2: The treasure map is hidden in a book!"
+            parrafo2[1].style.color = "magenta"
+            let boton2 = document.querySelector("#boton2")
+            boton2.innerHTML ="Secret revealed !!"
+            if (!secretRevealed2)
+                miAudio.play()
+            secretRevealed2 = true
+            return true
+        }
+        let parrafo3 = document.querySelectorAll(".myQueryClass")
+        parrafo3[0].innerHTML = "🗝️Clue #1: The final door is locked ... find the golden key!"
+        parrafo3[0].style.color = "gold"
+        parrafo3[0].parentElement.style.backgroundColor = "lightgreen"
+        parrafo3[1].innerHTML = "🕰️Clue #2: The treasure map is hidden the clock!"
+        parrafo3[1].style.color = "green"
+        let boton3 = document.querySelector("#boton3")
+        boton3.innerHTML ="Secret revealed !!"
+        if (!secretRevealed3)
+            miAudio.play()
+        secretRevealed3 = true
+    }
+
+
+</script>
+
+</body>
+</html>

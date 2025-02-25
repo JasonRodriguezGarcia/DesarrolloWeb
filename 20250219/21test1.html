@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola</h1>
+    <p id="parrafo1">Hola a "tós"</p>
+    <button onclick="console.log('boton pulsado !!')">Ejecutar JS</button>
+    <button onclick="cambiarText()">Ejecutar JS2</button>
+    <button onclick="cambiarText2()">Ejecutar JS3</button>
+</body>
+<script>
+
+function cambiarText() {
+    console.log("BOTON PULSADO 1 !!!");
+    let p = document.querySelector("#parrafo1")
+    p.innerHTML = "Texto de párrafo cambiado1";
+    document.querySelector("button").innerHTML = "Texto de párrafo cambiado1";
+    document.querySelector("body").style.backgroundColor = "yellow";
+    document.querySelector("button").style.color="red";
+    
+}
+function cambiarText2() {
+    console.log("BOTON PULSADO 2 !!!");
+    document.getElementById("parrafo1").innerHTML = "Texto de párrafo cambiado2";
+    document.querySelector("body").style.backgroundColor = "blue";
+    document.querySelector("button").style.backgroundColor="blue";
+}
+</script>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- meta tags datos de mi documento, para busquedas en internet -->
+    <meta name="description" content="Página sobre mi comida favorita, la pizza.">
+    <meta name="keywords" content="pizza, comida, ingredientes, receta">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Juan Pérez">
+    <!-- open graph -->
+    <meta property="og:title" content="Título de la página">
+    <meta property="og:description" content="Descripción breve del contenido">
+    <meta property="og:image" content="URL de la imagen">
+    <meta property="og:type" content="Tipo de contenido, como 'article'">
+    <title>Página Personal</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    body {
+        width: 70%;
+        margin: auto;
+        font-family: "montserrat";
+    }
+
+    h1 {
+        text-align: center;
+        letter-spacing: 15px;
+        border: 2px solid slategray;
+        border-radius: 15px;
+        color: blue;
+        background-color: bisque;
+    }
+
+    p {
+        text-align: justify;
+        line-height: 25px;
+    }
+
+    img {
+        transition: 2s;
+        border-radius: 15px;
+        @starting-style {
+            translate: 1000px;
+            transform: rotate(720deg);
+        }
+    }
+</style>
+<body>
+    <!-- Seguir las instrucciones para crear una página web personal -->
+
+    <!-- Título de la página: Añadir un título con <h1> -->
+    <h1>Ordenadores de los 60 🛰️</h1>
+
+    <!-- Introducción: Añadir un párrafo de presentación con <p> -->
+    <p>
+        La historia del hardware de computadora comenzando en 1960 está marcada por la conversión desde el tubo de vacío a los dispositivos de estado sólido como el transistor y posteriormente el circuito integrado. Por 1959 los transistores discretos eran considerados suficientemente confiables y económicos que hicieron no competitivos los computadores de tubos de vacío. La memoria principal del computador lentamente se movió lejos de los dispositivos de memoria de núcleo magnético a la memoria de semiconductor estática y dinámica de estado sólido, que redujo grandemente el costo, tamaño y consumo de energía de los dispositivos del computador. Eventualmente, el costo de los dispositivos de circuito integrado fue lo suficientemente bajo que los computadores caseros y los computadores personales llegaron a ser comunes.
+    </p>
+
+    <!-- Imagen: Añadir una imagen de ti o una imagen de ejemplo con <img> -->
+    <img src="./imagenes/ordenador60.jpg" alt="Ordenador de los 60">
+    <!-- Sección de información personal: Usar <section> para agrupar esta información -->
+    <section>
+
+        <!-- Añadir un sub encabezado con <h2> para la sección 'Sobre Mi' -->
+        <h2>Sobre mi computer</h2>
+            <!-- Luego añadir un párrafo de información, describiendo tus intereses o experiencias con <p> 
+                Incluir:
+                - unas palabras en negrito, italics 
+                - Una nueva linea con <br>
+                
+                -->
+        <p>
+            <ul>
+                <li>
+                    Sinclair <b>ZX81</b> de <br>
+                    <i>1kb de memoria RAM</i>
+                </li>
+                <li>
+                    Fabricado por Sinclear Research Ltd.
+                </li>
+            </ul>
+        </p>
+    </section>
+  
+    <!-- Añadir un sub encabezado con <h2> para la sección 'La Programación' -->
+    <h2>La programación en Basic del ZX81</h2>
+    <!-- Luego añadir un párrafo de información:
+        - un ejemplo de código con <code>
+        - un enlace a una página web con <a>
+    -->
+    <p>
+        <code>
+            console.log("VAya programa!!");
+        </code>
+        <a href="https://es.wikipedia.org/wiki/Sinclair_ZX81" target="_blank"> ZX81</a>
+    </p>
+
+    <!-- Hobbies (leer, viajar): Usar una lista ordenada o no ordenada con <ul> o <ol> y <li> para los elementos -->
+    <ol>
+        <li>Cacharrear con electrónica</li>
+        <li>Desmontar aparatos</li>
+        <li>Tratar de arreglarlos
+            <ol>
+                <li>
+                    Se arregla bien
+                </li>
+                <li>
+                    Se arregla menos bien
+                </li>
+            </ol>
+        </li>
+        <li>Reusar lo arreglado</li>
+    </ol>
+    
+    <!-- Cita: Añadir una cita o comentario 'La vida es bella' con <blockquote> -->
+    <blockquote>
+        "Mas vale reciclar ... que amanece más temprano"
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, voluptatum! Porro, ex! Saepe rem incidunt expedita. Nesciunt iure quae exercitationem sint. Amet dolorem necessitatibus minima delectus. Quo quaerat ad temporibus.
+    </blockquote>
+
+    <!-- Información de contacto: Usar un párrafo con <p> y crear enlaces con <a>, pro ejemplo a href="mailto:email@exa.... -->
+    <p>
+        <a href="mailto:jason_rg1@hotmail.com">email mío</a>
+    </p>
+ 
+
+</body>
+</html>

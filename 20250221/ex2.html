@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+button {
+    box-shadow: 10px 10px 20px 15px grey;
+    visibility: hidden;
+}
+</style>
+</head>
+<body>
+    
+    <button onclick="calcular()">Calcular</button>
+
+<script>
+    calcular()
+
+    function calcular() {
+        let confirma = window.confirm("Quieres hacer una suma?")
+
+        if (confirma) {
+            debugger
+            let num1 = window.prompt("Introducir numero 1:")
+            let num2 = window.prompt("Introducir numero 2:")
+            let resultado = parseInt(num1) + parseInt(num2)            
+            alert(`El resultado de ${parseInt(num1)} + ${parseInt(num2)} es:\n${resultado}`)
+        }
+        console.log(confirma)
+    }
+</script>
+</body>
+</html>
