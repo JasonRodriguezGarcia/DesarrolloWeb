@@ -17,3 +17,7 @@ function enviarMensaje() {
     main.scrollTo(0, main.scrollHeight)
     texto.focus()
 }
+
+function addImage(e) {
+    
+}
