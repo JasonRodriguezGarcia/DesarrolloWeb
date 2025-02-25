@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "Montserrat";
+}
+header {
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1, h4 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+    }
+
+    h4 {
+        color: white;
+    }
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Plataforma de Capacitación empresarial</h1>
+        <h4>Accede a los materiales multimedia para mejorar tus habilidades profesionales</h3>
+    </header>
+    <main>
+        <section>
+                <!-- Ejemplo de <video> -->
+            <h2>1. Etiqueta &lt;video&gt;</h2>
+            <video width="320" height="240" controls>
+                <source src="./assets/videos/paisaje.mp4" type="video/mp4">
+                Tu navegador no soporta la etiqueta de video.
+            </video>
+            <!-- <input type="file" name="video" id=""> -->
+
+            <!-- Ejemplo de <audio> -->
+            <h2>2. Etiqueta &lt;audio&gt;</h2>
+            <audio controls>
+                <source src="./assets/audio/guitarra.mp3" type="audio/mp3">
+                Tu navegador no soporta la etiqueta de audio.
+            </audio>
+            <!-- <input type="file" name="audio" id=""> -->
+
+        </section>
+    </main>
+</body>
+</html>

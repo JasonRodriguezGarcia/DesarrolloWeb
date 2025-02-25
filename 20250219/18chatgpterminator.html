@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
 <style>
     @font-face {
         font-family: 'Terminator';
@@ -73,6 +73,12 @@
             width: 10%;
             min-width: 50px;
         }
+
+        i, button {
+            cursor: pointer;
+        }
+
+        
     }
     .sup {
         font-size: 7px;
@@ -138,7 +144,17 @@
     <footer>
         <input type="text" name="texto" id="texto" placeholder="Enter text...">
         <button id="botonEnvio">Send</button>
-    </footer>
+
+        <label for="fichero"><i class="fa-solid fa-square-plus fa-xl"></i></label>
+        <input type="file" id="fichero" onchange="addImage(e)" hidden>
+
+        </footer>
+<script>
+
+function addImage(e) {
+    
+}
+</script>
 <script src="./js/18chatgpt.js"></script>
 </body>
 </html>

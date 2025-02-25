@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    img {
+        width: 350px;
+    }
+</style>
+</head>
+<body>
+
+    <!-- leer varias imagenes -->
+    <h1>Seleccionar un archivo para ver</h1>
+    <input type="file" name="fileUpload" id="fileUpload" multiple accept="image/*" onchange="readFile()">
+    <div id="resultado"></div>
+<script>
+    // leer archivo y mostrar resultado en div
+    function readFile() {
+        const div = document.querySelector("#resultado")
+        const fileUpload = document.querySelector("#fileUpload")
+        const files = fileUpload.files
+        
+        for (let index = 0; index < files.length; index++) {
+            const element = files[index]
+            if (element) {
+                const reader = new FileReader()
+                
+                reader.readAsDataURL(files[index])
+                
+                reader.onload = function(e) {
+                    let dataUri = e.target.result
+                    // sitodo va bien
+                    console.log("todo bien!")
+                    let imagen = document.createElement("img")
+                    imagen.src = dataUri
+                    div.appendChild(imagen)
+                }
+                reader.onerror = function(e) {
+                    console.log("error")
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
