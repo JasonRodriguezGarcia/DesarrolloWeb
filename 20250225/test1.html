@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#linea {
+    transition: 1s;
+    background-color: blue;
+    width: 100px;
+    color: white;
+}
+</style>
+<body>
+    <div id="linea">
+        hola
+    </div>
+    <button id="boton">Click</button>
+<script>
+    boton.onclick = function() {
+        miDiv = document.querySelector("#linea")
+        setTimeout(() => {
+            miDiv.style.backgroundColor = "red"
+            miDiv.style.width = "1000px"
+
+        },2000)
+    }
+</script>
+</body>
+</html>
