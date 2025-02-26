@@ -21,8 +21,7 @@ function enviarMensaje() {
     }
 }
 
-function addImage() {
-    
+function addImage() {   
     inputFichero = document.querySelector("#fichero")
     file = inputFichero.files[0]
     const reader = new FileReader();
@@ -33,8 +32,6 @@ function addImage() {
         reader.onload = function (e) {
             // sitodo va bien
             console.log("todo bien!")
-            // div.innerHTML = e.target.result
-            // div.textContent = e.target.result
             imagen = document.createElement("img")
             imagen.src = e.target.result
             imagen.classList.add("textoInput", "ficheroMargenes")

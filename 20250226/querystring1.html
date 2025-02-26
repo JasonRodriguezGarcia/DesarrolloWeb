@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Benvenutti (o como se diga)...</h1>
+    <div id="nombre">Te llamas </div>
+    <div id="edad">Tienes </div>
+    <div id="anos">En 10 años tendrás </div>
+</body>
+<script>
+    // Capturar los queryString e imprimirlos en la página web
+
+    // capturar parámetros y los metemos en un objeto
+    const parametros = new URLSearchParams(window.location.search)
+    console.log(parametros)
+    const nombre = parametros.get('nombre')
+    const edad = parametros.get('edad')
+    console.log(nombre)
+
+    // if (nombre) {
+        if (parametros.has('nombre')) {
+        document.querySelector('#nombre').innerHTML += nombre
+    } else {
+        document.querySelector('#nombre').innerHTML = 'SIN DATOS NOMBRE'
+    }
+    if (parametros.has('edad')) {
+        document.querySelector('#edad').innerHTML += edad
+        document.querySelector('#anos').innerHTML += parseInt(edad) + 10
+    } else {
+        document.querySelector('#edad').innerHTML = 'SIN DATOS EDAD'
+    }
+
+
+
+</script>
+</html>

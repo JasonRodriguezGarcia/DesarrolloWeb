@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@keyframes animationName {
+  from { transform: translateX(0); }
+  to { transform: translateX(1000img ); }
+}
+div {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  animation-name: animation;          /* Usar la animación que definimos */
+  animation-duration: 2s;                /* Dura 2 segundos */
+  animation-timing-function: ease;       /* Movimiento suave */
+  transform: translateY(50vh)
+  /*animation-iteration-count: infinite;    Repetir para siempre*/
+}
+@keyframes animation {
+    0%{
+        opacity: .3;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: .4;
+        transform: translateY(75vh);
+    }
+    100% {
+        opacity: .5;
+        transform: translateY(55vh);
+    }
+}
+.banner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    width: 30%;
+    background-color: blue;
+    /*animation-name: animationName;           Usar la animación que definimos */
+    animation-duration: 2s;                /* Dura 2 segundos */
+    animation-timing-function: ease;       /* Movimiento suave */
+
+    button {
+        min-width: 100px;
+    }
+}
+</style>
+<body>
+    <div class="banner">
+        <h1>Bienvenidos a nuestra pagina</h1>
+        <button class="cta">Comienza ahora</button>
+    </div>
+
+</body>
+</html>

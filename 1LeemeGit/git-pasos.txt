@@ -19,6 +19,12 @@ hemos creado el repositorio DesarrolloWeb, ejecutamos:
 Con esto tenemos github sincronizado con nuestros ficheros en local
 
 *************************
-para bajarte un git hub de tu nube a local
+para bajarte una copia del git hub de tu nube a local
 
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+
+*************************
+para actualizar tu github local
+
+git pull
