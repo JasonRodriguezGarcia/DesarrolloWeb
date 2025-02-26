@@ -31,43 +31,46 @@ h1 {
 }
 nav {
     background-color: lightblue;
-}
-nav > ul{
-    display: flex;
-    justify-content: left;
-    list-style-type: none;
-    font-weight: bold;
-    padding: 0;
-}
-nav > ul > li {
-    color: green;
-    padding: 10px;
-}
-nav > ul > li:hover {
-    color: white;
-    background-color: lightskyblue;
-}
-nav > ul > li > a {
-    text-decoration: none;
-    cursor: pointer;
-    color: blue;
-}
-nav > ul >li > a:hover {
-    
-    border-bottom: 1px solid;
+
+    ul{
+        display: flex;
+        justify-content: left;
+        list-style-type: none;
+        font-weight: bold;
+        padding: 0;
+
+        li {
+            color: green;
+            padding: 10px;
+
+            a {
+                text-decoration: none;
+                cursor: pointer;
+                color: blue;
+            }
+            a:hover {                
+                border-bottom: 1px solid;
+            }
+        }
+        li:hover {
+            color: white;
+            background-color: lightskyblue;
+        }
+    }
 }
 section {
     width: 80%;
     margin: auto;
     color: white;
     padding: 20px;
-}
-section > h2 {
-    text-align: center;
-    padding: 10px;
-    background-color: rgb(112, 126, 163);
-    margin: 20px;
-    border-radius: 10px;
+
+    h2 {
+        text-align: center;
+        padding: 10px;
+        background-color: rgb(112, 126, 163);
+        margin: 20px;
+        border-radius: 10px;
+    }
 }
 </style>
 </head>

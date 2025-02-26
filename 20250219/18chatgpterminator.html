@@ -49,6 +49,11 @@
             line-height: 30px;
         }
         
+        img {
+            width: 100px;
+            display: block;
+            box-sizing: border-box;
+        }
     }
     footer {
         position: sticky;
@@ -87,8 +92,14 @@
         border: 1px solid grey;
         background-color: white;
         border-radius: 5px;
-        width: 80%;
         margin-left: auto;
+        padding: 10px;
+    }
+    .textoInputAnchura {
+        width: 80%;
+    }
+    .ficheroMargenes {
+        margin: 20px 0 20px auto;
         padding: 10px;
     }
 </style>
@@ -146,7 +157,7 @@
         <button id="botonEnvio">Send</button>
 
         <label for="fichero"><i class="fa-solid fa-square-plus fa-xl"></i></label>
-        <input type="file" id="fichero" onchange="addImage(e)" hidden>
+        <input type="file" id="fichero" onchange="addImage()" hidden accept="images/*">
 
         </footer>
 <script src="./js/18chatgpt.js"></script>
