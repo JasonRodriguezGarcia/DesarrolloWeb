@@ -10,12 +10,17 @@ const server = createServer((req, res) => {
     // var url = req.url
     // var method = req.method
     // var fileName = ""
+        // Retrieving .htlm file name
+        const requestURL = req.url;
+        console.log(requestURL);
+        let urlHTML = requestURL.slice(1,requestURL.search(".html")+5);
+        console.log(urlHTML);
 
-    if (req.method === 'GET') {
+    if (req.method === 'GET' && urlHTML === "querystring1.html") {
         const parsedUrl = url.parse(req.url, true); // The second argument 'true'
         // console.log(parsedUrl)
         const queryData = parsedUrl.query; // access to query object
-        // console.log(queryData)
+        console.log(queryData)
         const nombre = queryData.nombre; // ?name
         const edad = queryData.edad;
 
