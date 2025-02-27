@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generador números aleatorios de 1 a 100 (configurable)</h1>
+    <button id="boton" type="button">Pinchar</button>
+<script>
+    document.getElementById("boton").addEventListener("click", function(e) {
+        let numMin = 1
+        let numMax = 100
+        let numeroAleatorio = Math.floor(Math.random() * numMax) + numMin
+        console.log("Número: ", numeroAleatorio)
+    })
+</script>
+</body>
+</html>

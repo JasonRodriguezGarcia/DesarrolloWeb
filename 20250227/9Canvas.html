@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    canvas {
+        border: 3px solid black;
+        cursor: pointer;
+        width: 30%;
+    }
+</style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="600"></canvas>
+    <canvas id="myCanvas2" width="500" height="600"></canvas>
+
+<script>
+    const canvas = document.getElementById("myCanvas")
+    const ctx = canvas.getContext('2d')
+    const canvas2 = document.getElementById("myCanvas2")
+    const ctx2 = canvas2.getContext('2d')
+
+    // // 1 cuadrado
+    // ctx.fillStyle = "blue"
+    // ctx.fillRect(10, 20, 50, 50) // x, y, lado1, lado2
+    // // otro cuadrado
+    // ctx.fillStyle = "red"
+    // ctx.fillRect(400, 400, 50, 50) // x, y, lado1, lado2
+    drawBox(700, 800, "blue")
+
+    for (let index = 0; index < 115; index++) {
+        // drawBox(1+index*100, 20, "blue")
+        drawBox(
+            Math.floor(Math.random()*445)+1,
+            Math.floor(Math.random()*545)+ 2,
+            "blue"
+        )
+    }
+
+    const radio = 30
+    ctx.beginPath()
+    //ctx.arc(x,y,radius, startAngle, endAngle, anticlock)
+    ctx.arc(175, 175, radio, 0, 2*Math.PI)
+    ctx.stroke()
+
+    const radio2 = 30
+    ctx2.beginPath()
+    //ctx.arc(x,y,radius, startAngle, endAngle, anticlock)
+    ctx2.arc(50, 150, radio, 0, 2*Math.PI)
+    ctx2.stroke()
+
+    // const radio2 = 30
+    // for (let index = 0; index < 20; 15++) {
+    //     ctx2.beginPath()
+    //     //ctx.arc(x,y,radius, startAngle, endAngle, anticlock)
+    //     ctx2.arc(1, 175, radio2, 0, 2*Math.PI)
+    //     ctx2.stroke()
+       
+    // }
+    function drawBox(x, y, color) {
+        ctx.fillStyle = color
+        ctx.fillRect(x, y, 50, 50) // x, y, lado1, lado2
+    }
+
+</script>
+</body>
+</html>

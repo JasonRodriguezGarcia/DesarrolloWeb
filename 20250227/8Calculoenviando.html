@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+    <form action="127.0.0.1:3000/" method="POST">
+        <br><br><br><br><br><br><br><br><br><br>
+        <label for="precio">Precio</label>
+        <input type="number" name="precio" value="0" id="precio" min="1"><br>
+
+        <label for="cantidad">Cantidad</label>
+        <input type="number" name="cantidad" value="0" id="cantidad" min="1"><br><br>
+
+        <label for="importe">Importe</label>
+        <input type="text" name="importe" value="0" id="importe" disabled>
+
+        <label for="final">Precio final (incl 12% Iva)</label>
+        <input type="text" name="final" value="0" id="final" disabled>
+
+        <button type="submit" id="boton">Calcular</button>
+<script>
+
+// document.querySelector("#boton").addEventListener("click", () => {
+//     let precio = document.querySelector("#precio")
+//     let cantidad = document.querySelector("#cantidad")
+//     let importe = document.querySelector("#importe")
+//     let final = document.querySelector("#final")
+//     debugger   
+//     importe.value = cantidad.value * precio.value
+
+//     final.value = importe.value * 1.12 
+
+//     alert(final.value)
+// })
+</script>
+    </form>
+</body>
+</html>

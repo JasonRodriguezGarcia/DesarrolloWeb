@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        margin: auto;
+        width: 50%;
+    }
+    meter {
+        width: 500px;
+    }
+</style>
+</head>
+<body>
+    <h1></h1>
+    <button id="boton">Pulsar</button>
+    <meter value="1" min="1" max="1000"></meter>
+
+<script>
+
+    boton = document.querySelector("#boton")
+    barraMeter = document.querySelector("meter")
+    h1 = document.querySelector("h1")
+
+    boton.onclick = function() {
+        h1.innerHTML = "Secreto"
+        barraMeter.value = 1
+        boton.disabled = true
+        myInterval = setInterval(incrementa, 5);
+    }
+
+    function incrementa() {
+        debugger
+        barraMeter.value +=1
+        if (barraMeter.value === 1000) {
+            clearInterval(myInterval)
+            boton.disabled = false
+            h1.innerHTML = "SECRET REVEALED !!"
+        }
+    }
+</script>
+</body>
+</html>

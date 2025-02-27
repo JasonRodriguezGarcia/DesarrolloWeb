@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: auto;
+        width: 50%;
+    }
+</style>
+<body onload="escribeNombre()">
+    <button id="boton">Dime tu nombre</button>
+
+    <dialog id="dialogo" close>
+    </dialog>
+<script>
+    nombre = ""
+    dialogo = document.querySelector("dialog")
+
+    function escribeNombre() {
+        nombre = prompt("Escribe tu nombre")
+    }
+
+    boton.onclick = function () {
+        textoNombre = document.createElement("h1")        
+        textoNombre.innerHTML = nombre
+        textoNombre.backgroundColor = "blue"
+        textoNombre.color = "white"
+        dialogo.padding = "20px"
+        dialogo.appendChild(textoNombre)
+        dialogo.show()
+    }
+</script>
+</body>
+</html>
