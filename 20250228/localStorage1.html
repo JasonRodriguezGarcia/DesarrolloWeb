@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Simple Notes APP</h1><br>
+    <textarea name="texto" id="texto" placeholder="Write your note here.." lines="2" cols="20"></textarea><br>
+    <button id="saveNote">Save Note</button><button id="displayNote">Display Note</button><br>
+    <br>
+    <p>Saved Notes</p>
+    <p id="note"></p>
+
+<script>
+botonSaveNote = document.querySelector("#saveNote")
+botonDisplayNote = document.querySelector("#displayNote")
+textoArea = document.querySelector("#texto")
+note = document.querySelector("#note")
+
+botonSaveNote.addEventListener("click", function () {
+    localStorage.setItem("note", textoArea.value)
+    textoArea.value = ""
+    
+})
+
+botonDisplayNote.addEventListener("click", function () {
+    const noteValue = localStorage.getItem("note")
+    note.innerHTML = noteValue
+    textoArea.value = ""
+})
+
+
+</script>
+
+</body>
+</html>

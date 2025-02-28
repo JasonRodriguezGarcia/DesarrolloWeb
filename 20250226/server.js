@@ -12,9 +12,9 @@ const server = createServer((req, res) => {
     // var fileName = ""
         // Retrieving .htlm file name
         const requestURL = req.url;
-        console.log(requestURL);
+        // console.log(requestURL);
         let urlHTML = requestURL.slice(1,requestURL.search(".html")+5);
-        console.log(urlHTML);
+        // console.log(urlHTML);
 
     if (req.method === 'GET' && urlHTML === "querystring1.html") {
         const parsedUrl = url.parse(req.url, true); // The second argument 'true'
@@ -26,8 +26,8 @@ const server = createServer((req, res) => {
 
         console.log(nombre, edad);
 
-        res.end();
     }
+        res.end();
 });
 
 server.listen(3000, '127.0.0.1', () => {

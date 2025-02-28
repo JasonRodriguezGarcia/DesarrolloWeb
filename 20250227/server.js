@@ -39,7 +39,7 @@ const server = createServer((req, res) => {
 
             res.statusCode = 200;
             res.setHeader('Content-Type', 'text/plain');
-            res.end(JSON.stringify({ "Resultado": resultado}))
+            res.end(JSON.stringify({ "Resultado" : resultado }))
             // fs.writeFile("example.txt", JSON.stringify(formData), (err) => {
             //     if (err) {
             //         console.log("Hay un error, si eso también ya tal ...")

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body {
+    background-image: url(../20250217-18/imagenes/fotografia-de-paisaje.jpg);
+    background-size: cover;
+}
+dialog {
+    border-radius: 15px;
+    border-color: slategray;
+    border: 3px solid;
+    background-color: aqua;
+    font-weight: bold;
+    text-align: center;
+
+    &::backdrop {
+    }
+    button {
+        font-weight: bold;
+    }
+}
+
+dialog::backdrop {
+    filter: blur(54px);
+
+}
+</style>
+</head>
+<body>
+    <button onclick="abrirDialog()">Activa dialog</button>
+
+    <dialog id="dialogBox">
+        <p>Cual es tu respuesta</p>
+        <form method="dialog">
+            <star>
+                <span onclick="pulsada(1)">⭐</span>
+                <span onclick="pulsada(2)">⭐</span>
+                <span onclick="pulsada(3)">⭐</span>
+                <span onclick="pulsada(4)">⭐</span>
+                <span onclick="pulsada(5)">⭐</span>
+                </div>
+            </star>
+
+        </form>
+    </dialog>
+<script>
+    function abrirDialog() {
+        document.querySelector("#dialogBox").showModal()
+    }
+    function pulsada(posicion) {
+        console.log("Estrella pulada nº: ", posicion)
+    }
+</script>
+</body>

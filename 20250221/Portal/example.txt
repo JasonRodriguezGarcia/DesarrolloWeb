@@ -1,1 +1,1 @@
-{"txtNombre":"pepeillo","correo":"asdf@asda.com","txtTelefono":"943333333","numExperiencia":"1","selectTxtPuesto":"carpintero"}
+{"txtNombre":"pepeillo","correo":"asdf@asda.com","txtTelefono":"943333333","numExperiencia":"1","selectTxtPuesto":"carpintero","foto":"","curriculum":""}
