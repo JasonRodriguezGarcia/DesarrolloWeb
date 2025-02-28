@@ -1,4 +1,5 @@
 import { createServer } from 'node:http';
+import querystring from 'node:querystring'
 import fs from 'node:fs';
 import url  from 'node:url';
 
@@ -10,10 +11,10 @@ const server = createServer((req, res) => {
     // Retrieving .htlm file name
     const requestURL = req.url;
     console.log(requestURL);
-    let urlHTML = requestURL.slice(1, requestURL.search(".html")+5);
-    console.log(urlHTML);
+    // let urlHTML = requestURL.slice(1, requestURL.search(".html")+5);
+    // console.log(urlHTML);
 
-    if (req.method === "POST" ){
+    if (req.method === "POST"  && requestURL === "/calcular"){
 
         let body = ""
         // recibimos los datos poco a poco
@@ -33,9 +34,12 @@ const server = createServer((req, res) => {
             console.log("***Datos:\n" + content)
 
             // hacer calculos
+            const resultado = formData.precio * formData.cantidad * 1.12
+            console.log (resultado)
 
-
-            res.end(JSON.toString(resultado))
+            res.statusCode = 200;
+            res.setHeader('Content-Type', 'text/plain');
+            res.end(JSON.stringify({ "Resultado": resultado}))
             // fs.writeFile("example.txt", JSON.stringify(formData), (err) => {
             //     if (err) {
             //         console.log("Hay un error, si eso también ya tal ...")
@@ -46,34 +50,10 @@ const server = createServer((req, res) => {
             //     }
             // })
         })
-
-        
-        // // Retrieving URL and parsing (to object) to work with 
-        // const parsedURL = url.parse(req.url, true);
-        // console.log(`parsedURL:\n`, parsedURL);
-        // // Once URL is parse we can work with their objects
-        // //      Retrieving query string content
-        // //          { edad: '550', nombre: 'pepes' }
-        // const queryData = parsedURL.query;
-        // //      Retrieving query objects
-        // const precio =queryData.precio;
-        // const cantidad = queryData.cantidad;
-        // const filenombre = urlHTML;
-
-        // fs.readFile(filenombre, (err, data) => {
-        //     if (err) {
-        //         res.statusCode = 404;
-        //         res.setHeader('Content-Type', 'text/plain');
-        //         res.end('Not Found');
-        //     } else {
-        //         res.statusCode = 200;
-        //         var responseData = data.toString()
-        //             .replace("{{nombre}}",precio)
-        //             .replace("{{edad}}", edad);
-        //         res.setHeader('Content-Type', 'text/html');
-        //         res.end(responseData);
-        //     }
-        //  });
+    } else {
+        res.statusCode = 404;
+        res.setHeader('Content-Type', 'text/plain');
+        res.end(JSON.stringify({ "url error": "Not found"}))
     };
 });
 
