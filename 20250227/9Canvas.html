@@ -51,6 +51,13 @@
     ctx2.arc(50, 150, radio, 0, 2*Math.PI)
     ctx2.stroke()
 
+    dibuja()
+    
+    // ctx.fillRect(25, 25, 100, 100);
+    // ctx.clearRect(45, 45, 60, 60);
+    // ctx.strokeRect(50, 50, 50, 50);
+
+
     // const radio2 = 30
     // for (let index = 0; index < 20; 15++) {
     //     ctx2.beginPath()
@@ -64,6 +71,48 @@
         ctx.fillRect(x, y, 50, 50) // x, y, lado1, lado2
     }
 
+async function dibuja() {
+    for (let index = 25; index < 500; index+=50) {
+        debugger
+        // columnaFor = index + 50
+        let filaFor = 25
+        let filaFor2 = 375
+        
+        await dibuja2(index, filaFor, filaFor2)
+
+        // ctx2.clearRect(index, columnaFor, 100, 100)
+         
+            // setTimeout(() =>{ctx2.clearRect(index, columnaFor, 100, 100)}, 2000)
+        await setTimeout(() =>{
+                ctx2.clearRect(filaFor, index, 100, 100)                
+                ctx2.clearRect(filaFor2, index, 100, 100)
+            }, 2000)
+
+        
+
+        // let fila = 200
+        // let columna = 250
+        // ctx2.fillStyle= "green"
+        // ctx2.fillRect(fila, columna, 100, 100)
+        // ctx2.clearRect(fila+20, columna+20, 60, 60)
+        // ctx2.strokeRect(fila+25, columna+25, 50, 50)
+        // setTimeout(() =>{ctx2.clearRect(fila, columna, 100, 100)}, 2000)
+        
+
+    }
+}
+function dibuja2(index, filaFor, filaFor2) {
+    ctx2.fillStyle= "green"
+    ctx2.fillRect(filaFor, index, 100, 100)
+    ctx2.clearRect(filaFor+20, index+20, 60, 60)
+    ctx2.strokeRect(filaFor+25, index+25, 50, 50)
+
+    ctx2.fillStyle= "green"
+    ctx2.fillRect(filaFor2, index, 100, 100)
+    ctx2.clearRect(filaFor2+20, index+20, 60, 60)
+    ctx2.strokeRect(filaFor2+25, index+25, 50, 50)
+    
+}
 </script>
 </body>
 </html>
