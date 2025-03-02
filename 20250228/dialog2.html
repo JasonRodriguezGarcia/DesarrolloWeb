@@ -9,7 +9,8 @@ body {
     background-image: url(../20250217-18/imagenes/fotografia-de-paisaje.jpg);
     background-size: cover;
 }
-dialog {
+#dialogBox {
+    user-select: none;
     border-radius: 15px;
     border-color: slategray;
     border: 3px solid;
@@ -18,15 +19,11 @@ dialog {
     text-align: center;
 
     &::backdrop {
+        backdrop-filter: blur(2px);
     }
     button {
         font-weight: bold;
     }
-}
-
-dialog::backdrop {
-    filter: blur(54px);
-
 }
 </style>
 </head>
@@ -53,6 +50,18 @@ dialog::backdrop {
     }
     function pulsada(posicion) {
         console.log("Estrella pulada nº: ", posicion)
+        strellas = document.querySelectorAll("star span")
+        strellas[posicion-1].style.backgroundColor=`rgb(${generaCodigo()}, ${generaCodigo()}, ${generaCodigo()})`
+    }
+    function generaCodigo() {
+        let superior = 255
+        let inferior = 0
+        let numPosibilidades = superior - inferior;
+        let aleatorio = Math.random() * numPosibilidades;
+        aleatorio = Math.floor(aleatorio);
+        codigo = parseInt(inferior) + aleatorio;
+        console.log(codigo)
+        return parseInt(inferior) + aleatorio;
     }
 </script>
 </body>

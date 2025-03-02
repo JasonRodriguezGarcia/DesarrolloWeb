@@ -9,7 +9,7 @@ body {
     background-image: url(../20250217-18/imagenes/fotografia-de-paisaje.jpg);
     background-size: cover;
 }
-dialog {
+#dialogBox {
     border-radius: 15px;
     border-color: slategray;
     border: 3px solid;
@@ -18,16 +18,13 @@ dialog {
     text-align: center;
 
     &::backdrop {
+        backdrop-filter: blur(2px);
     }
     button {
         font-weight: bold;
     }
 }
 
-dialog::backdrop {
-    filter: blur(54px);
-
-}
 </style>
 </head>
 <body>

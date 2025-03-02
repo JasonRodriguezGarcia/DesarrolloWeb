@@ -1,0 +1,38 @@
+1UNO
+que apareza una imagen y que al pinchar en ella nos redirija a otra web
+
+2DOS
+mostrar un texto al pulsar un boton. Lo hice con un prompt para meter un texto y luego al pulsar
+el boton sale un dialog.
+
+3TRES
+hacer un ejercicio con display flex que muestre 3 cajas de personas ilustres
+
+4CUATRO
+crear una tabla y cambiar el color de la última línea
+
+5CINCO
+
+crear un boton que al pulsarlo temporice la salida de un texto. Dicha temporización indicada con un <meter>
+
+6SEIS
+crear un boton que al pulsarlo se genere un número aleatorio que se imprimirá en pantalla 
+(añadirá al body un nuevo párrafo)
+
+7SIETE
+Tras introducir precio y cantidad, que al pulsar un botón apareza el siguiente resultado
+precio * cantidad * 1.12 (añadimos el 12% de IVA)
+
+8OCHO
+Hacer el 7SIETE pero llamando al servidor los datos precio y cantidad.
+Hay que crear el server.js y ponerlo en marcha.
+El servidor cuando recibe una solicitud POST en la URL "/calcular"
+lee los datos enviados en la solicitud de forma incremental a través de eventos 'data' y 'end'.
+El evento 'data' RECOGERA los datos de lectura del "data" en request (req) en la variable "chunk"
+que poco a poco se añade a la variable "body" hasta terminar de leerlos.
+Luego el evento 'end' hará el cálculo retornando respuesta con 'res' una cadena JSON
+
+9CANVAS
+hacer dibujos varios usando el elemento canvas. En este caso se usan 2 elementos canvas.
+En uno se crea un cuadrado azul que mediante ciclo se repite en distintas posiciones aleatorias.
+En otro se crean otras figuras mediante ciclo.

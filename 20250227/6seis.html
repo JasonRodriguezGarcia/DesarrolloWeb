@@ -14,6 +14,9 @@
         let numMax = 100
         let numeroAleatorio = Math.floor(Math.random() * numMax) + numMin
         console.log("Número: ", numeroAleatorio)
+        parrafo = document.createElement("p")
+        parrafo.innerHTML = `Numero aleatorio: ${numeroAleatorio}`
+        document.querySelector("body").appendChild(parrafo)
     })
 </script>
 </body>

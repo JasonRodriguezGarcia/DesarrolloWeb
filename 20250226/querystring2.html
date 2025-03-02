@@ -28,8 +28,8 @@ h1 {
     <p id="result">Waiting your guess ...</p>
 </body>
 <script>
-    // const secretNumer = '7'
-    const secretNumer = Math.floor((Math.random() * (10 - 1 + 1)) + 1).toString()
+    const secretNumer = '5'
+    // const secretNumer = Math.floor((Math.random() * (10 - 1 + 1)) + 1).toString()
     console.log(secretNumer)
     const parametros = new URLSearchParams(window.location.search)
     const numero = parametros.get('numero')
@@ -41,7 +41,7 @@ h1 {
             parrafoResult.innerHTML = `😅${numero} Must be lower than 11 !!😅`
 
         } else if (numero === secretNumer) {
-            parrafoResult.innerHTML = `🥳5 it's correct !! (EASY RHIME) That's the number!!🎉 `
+            parrafoResult.innerHTML = `🥳${secretNumer} it's correct !! (EASY RHIME) That's the number!!🎉 `
         } else {
             parrafoResult.innerHTML = `😂${numero} it's INCORRECT !! You are a LOOSER !!😂`
         }

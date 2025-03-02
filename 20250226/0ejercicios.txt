@@ -1,0 +1,48 @@
+h1
+animación de un div con un h1 y boton que se desplaza de arriba a abajo y sube un poco y finalmente para
+
+n1
+ejemplo de asincronía
+
+n2
+npi ... se quedó a medias?¿ creo que se olvidó el profe.
+
+querystring0
+uso de la cadena querystring de una url (dirección web del navegador)
+para usarlo ejecutar querystring0.html y añadir a mano un querystring y dejarlo como esto
+en la barra del navegador
+/querystring1.html?nombre=Pepe&edad=20&anos=15
+importante tiene que tener nombre, edad y anos, que se leen más tarde, ya que
+al pulsar un boton se llama la página querystring1.html que coge en javascript los datos 
+del querystring (nombre y anos) con 'new URLSearchParams(window.location.search)' y 'get' y se imprimen
+
+querystring1
+se usa en querystring0.html
+
+server.js 
+relacionado con querystring1, ya que al estar rulando el servidor detecta que se hace una solicitud
+GET de "querystring1.html", cogiendo en servidor el querystring con 'url.parse(req.url, true)' y 'parsedUrl.query'
+para mostrar en consola el nombre y la edad .
+
+querystring2
+uso de la cadena querystring de una url (dirección web del navegador)
+para usarlo ejecutar querystring2.html y añadir a mano un querystring y dejarlo como esto
+en la barra del navegador
+/querystring2.html?numero=7
+al poner esta cadena y pulsar enter en la barra del navegador, la página querystring2 se carga
+ejecutando el javascript que coge los datos (nombre) del querystring con 
+'new URLSearchParams(window.location.search)' y 'get', comparándolos con la variable numersecretNumer
+para ver si se ha adivinado.
+se tendrá que repetir el proceso de actualizar el querystring con otro número distinto de 1 a 10 hasta 
+adiviarlo
+
+querystring3 y server2.js
+Están relacionados, ya que el ejercicio consiste en ejecutar querystring3, al que añadirmos un querystring
+dejándolo como '/querystring3.html?nombre=Pepe&edad=25'
+y el servidor responderá con un fichero html en el que se reemplaza en querystring3 el contenido
+{{nombre}} y {{edad}} por los valores del querystring
+Por lo que había que escribir el querystring3.html y el servidor, luego ejecutar querystring3.html
+a secas, apareciendo la cadena en pantalla 'Hola {{nombre}} tienes {{edad}} años', luego añadimos a 
+querystring3.html un querystring como '/querystring3.html?nombre=Pepe&edad=25', el servidor lo detecta 
+que se hace una solicitud GET de querystring3.html, ejecutando el código que reemplaza y devuelve la 
+respuesta con el fichero "querystring3.html" reemplazado

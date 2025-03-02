@@ -9,6 +9,14 @@
     body {
         margin: auto;
         width: 50%;
+        background-image: url(../20250217-18/imagenes/fotografia-de-paisaje.jpg);
+        background-size: cover;
+    }
+    dialog {
+        background-color: grey;
+        color: white;
+        border-radius: 15px;
+        padding: 20px 60px;
     }
 </style>
 <body onload="escribeNombre()">
@@ -31,7 +39,7 @@
         textoNombre.color = "white"
         dialogo.padding = "20px"
         dialogo.appendChild(textoNombre)
-        dialogo.show()
+        dialogo.showModal()
     }
 </script>
 </body>

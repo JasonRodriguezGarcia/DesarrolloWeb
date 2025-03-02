@@ -17,44 +17,59 @@ div {
   animation-name: animation;          /* Usar la animación que definimos */
   animation-duration: 2s;                /* Dura 2 segundos */
   animation-timing-function: ease;       /* Movimiento suave */
-  transform: translateY(50vh)
+  transform: translate(35vw, 35vh)
   /*animation-iteration-count: infinite;    Repetir para siempre*/
 }
 @keyframes animation {
     0%{
         opacity: .3;
-        transform: translateY(0);
+        transform: translate(35vw, 0);
     }
     50% {
         opacity: .4;
-        transform: translateY(75vh);
+        transform: translate(35vw, 55vh);
     }
     100% {
-        opacity: .5;
-        transform: translateY(55vh);
+        opacity: .7;
+        transform: translate(35vw, 35vh);
     }
 }
 .banner {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
     padding: 20px;
     border-radius: 15px;
     width: 30%;
+    height: 30%;
     background-color: blue;
+    color: white;
     /*animation-name: animationName;           Usar la animación que definimos */
-    animation-duration: 2s;                /* Dura 2 segundos */
-    animation-timing-function: ease;       /* Movimiento suave */
+    /* Dura 2 segundos */
+    /* animation-duration: 2s; */
+    /* Movimiento suave */
+    /* animation-timing-function: ease; */
 
     button {
         min-width: 100px;
     }
 }
+h1 {
+    text-align: center;
+}
 </style>
 <body>
     <div class="banner">
         <h1>Bienvenidos a nuestra pagina</h1>
-        <button class="cta">Comienza ahora</button>
+        <button id="boton" class="cta">Volver a cargar</button>
     </div>
-
+<script>
+    boton = document.querySelector("#boton")
+    boton.addEventListener ("click", ()=> {
+        location.reload()
+    })
+</script>
 </body>
 </html>

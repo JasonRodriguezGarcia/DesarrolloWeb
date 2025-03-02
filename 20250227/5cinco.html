@@ -26,7 +26,7 @@
     h1 = document.querySelector("h1")
 
     boton.onclick = function() {
-        h1.innerHTML = "Secreto"
+        h1.innerHTML = "Secret ... pls wait ..."
         barraMeter.value = 1
         boton.disabled = true
         myInterval = setInterval(incrementa, 5);
@@ -34,7 +34,7 @@
 
     function incrementa() {
         debugger
-        barraMeter.value +=1
+        barraMeter.value +=2
         if (barraMeter.value === 1000) {
             clearInterval(myInterval)
             boton.disabled = false

@@ -5,52 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <style>
-
+:root {
+    --x1: random(800%, 1600%); --y1: random(400%, 800%);
+    --x2: random(800%, 1600%); --y2: random(400%, 800%);
+    --x3: random(800%, 1600%); --y3: random(400%, 800%);
+    --x4: random(800%, 1600%); --y4: random(400%, 800%);
+}
 body {
     /* color:cornflowerblue */
     background-image: linear-gradient(to right, aqua , cornflowerblue);
+    width: 60vw;
+    overflow: hidden;
+    margin: auto;
+    /* display: flex; */
+    /* flex-direction: column; */
 }
+/* aparición por la derecha */
 h1 {
     display: flex;
     justify-content: center;
+    animation: desplazamiento 4s linear infinite alternate;
+    background-color: blue;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px 10px black;
 }
-@keyframes animation {
-    0%{
-        opacity: .3;
-        transform: translate(100px 100px);
-    }
-    25%{
-        opacity: .3;
-        transform: translate(100px 300px);
-    }
-    50% {
-        opacity: .4;
-        transform: translate(300px 300px);
-    }
-    75%{
-        opacity: .3;
-        transform: translate(300px 100px);
-    }
-    100% {
-        opacity: .5;
-        transform: translate(100px 100px);
-    }
+
+@keyframes desplazamiento {
+  from {
+    transform: translateX(110%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
 }
-.banner {
+/* movimiento en 5 secuencias */
+.banner1 {
+    position: absolute;
     width: 50px;
     height: 50px;
     border-radius: 15px;
     background-color: blue;
-
-    animation: animation 4s linear infinite;
-
+    /* animation-name: animation1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; */
+    animation: animation1 4s linear infinite;
+    animation-direction: alternate;
 }
+@keyframes animation1 {
+    0% { opacity: .3; transform: translate(400px, 150px);}
+    25% { opacity: .4; transform: translate(600px, 200px); }
+    50% { opacity: .2; transform: translate(500px, 300px); }
+    75% { opacity: .2; transform: translate(700px, 250px); }
+    100% { opacity: .3; transform: translate(400px, 150px); }
+}
+.banner2 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: yellow;
+    /* animation-name: animation2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; */
+    animation: animation2 3s linear infinite;
+    /* animation-direction: alternate; */
+}
+@keyframes animation2 {
+    0% { opacity: .3; transform: translate(800%, 200%);}
+    25% { opacity: .8; transform: translate(1600%, 200%); }
+    50% { opacity: .2; transform: translate(1600%, 400%); }
+    75% { opacity: .6; transform: translate(800%, 400%); }
+    100% { opacity: .4; transform: translate(800%, 200%); }
+}
+.banner3 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color:salmon;
+    /* animation-name: animation2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; */
+    animation: animation3 3s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes animation3 {
+    0% { opacity: .8; transform: translate(1600%, 100%);}
+    25% { opacity: .6; transform: translate(800%, 400%); }
+    50% { opacity: .2; transform: translate(1600%, 400%); }
+    75% { opacity: .3; transform: translate(800%, 100%); }
+    100% { opacity: .8; transform: translate(1600%, 100%); }
+}
+.banner4 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color:black;
+    /* animation-name: animation2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; */
+    animation: animation4 3s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes animation4 {
+    0% { opacity: .8; transform: translate(random(800px, 1600px), random(400px, 800px));}
+    25% { opacity: .6; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+    50% { opacity: .2; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+    75% { opacity: .3; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+    100% { opacity: .8; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+}
+/* estiramiento horizontal (a lo Rajoy pero en horizontal) */
+.banner5 {
+    position: absolute;
+    top: 75px;
+    width: 50px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: red;
+    animation: animation5 3s  infinite;
+}
+@keyframes animation5 {
+  from {
+    margin-left: 0;
+    width: 50%;
+  }
 
+  to {
+    margin-left: 0;
+    width: 0;
+  }
+}
 </style>
 </head>
 <body>
     <h1>Welcome to the Fun Animated Peich</h1>
-    <div class="banner">
-    </div>
+    <div class="banner1"></div>
+    <div class="banner2"></div>
+    <div class="banner3"></div>
+    <div class="banner4"></div>
+    <div class="banner5"></div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
 </body>
 </html>

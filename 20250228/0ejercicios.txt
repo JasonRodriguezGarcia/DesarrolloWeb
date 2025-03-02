@@ -1,0 +1,57 @@
+cargapagina.html y a1.js
+ejercicio en el que se ve la importacia de que al añadir <script src"a1.js"></script> al principio de una página 
+puede ocurrir que en el script se haga referencia a elementos de la página que todavía no se han cargado
+por lo que al añadir 'defer' a la llamada del script <script src"a1.js" defer></script> se carga primero la 
+página y luego el script.
+Probar a ver que el resultado es distinto al quitar o poner el 'defer' en la llamada al script en cargapagina.html.
+
+DoomContent.html
+Ejercicio parecido al de arriba con script al principio en el que nos aseguramos que se carga la página primero
+y luego hace los cambios oporturnos. Esta vez se hace con document.addEventListener('DOMContentLoaded'...
+Enrevesado en mi opinión.
+
+animación.html
+formas de hacer distintas animaciones
+tenemos un 
+<div class="banner1"></div>
+y en estilos se le añaden distintas propiedades 
+.banner1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    background-color:black;
+    /* animation-name: animation2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; */
+    animation: animation4 3s linear infinite;
+    animation-direction: alternate;
+}
+y se le asigna una animacion en distintas posiciones definidas con @keyframes, la inicial y la final deben coincidir
+@keyframes animation4 {
+    0% { opacity: .8; transform: translate(random(800px, 1600px), random(400px, 800px));}
+    25% { opacity: .6; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+    50% { opacity: .2; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+    75% { opacity: .3; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+    100% { opacity: .8; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+}
+
+dialog1.html
+mostrar un <dialog> al pulsar un boton
+añadido efecto foco disperso del fondo con 'backdrop-filter'
+
+dialog2.html
+modificacion de dialog1 añadiendo que al pulsar boton, el <dialog> muestre un texto y una línea con 5 estrellas,
+y que al pulsar una estrella, muestre en consola la posición de la estrella en la línea.
+añadido que cambie de color.
+
+localStorage1.html
+ejercicio en el que se almacena información en el localStorage para luego se recuperada/borrada.
+Util para guardar hasta 5Mb información, mas que las cookies, que al igual que ellas también podrían
+guardar datos inicio de sesion, otros ...
+Para lo mismo también se puede usar IndexedDB.
+Al escribir en un textarea y darle al botón 'save', la clave 'note' se guarda en el localStorage.
+Dicha clave se recupera si existe en el localStorage con el botón 'Display'.
+El profe pide modificar el formulario creado en la web Registro para que al guardar el registro se guarde
+también una clave 'color' en el localStorage para que cuando se entre en el Registro más tarde, 
+se cambie un elemento del formulario Registro con un color de la clave
