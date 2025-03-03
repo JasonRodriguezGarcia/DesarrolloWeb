@@ -73,36 +73,46 @@ section {
         margin: 20px;
         border-radius: 10px;
     }
-}
-form {
-    margin: auto;
-    width: 40%;
-    background-color: aqua;
-    color: blueviolet;
-    border: 2px solid grey;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    padding: 20px;
-    gap: 15px;
-    transition: 2s;
-
-    input, select{
-        padding: 5px;
+    form {
+        margin: auto;
+        width: 40%;
+        background-color: aqua;
+        color: blueviolet;
+        border: 2px solid grey;
         border-radius: 5px;
-    }
-
-    button {
-        font-weight: bold;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        padding: 20px;
+        gap: 15px;
+        transition: 2s;
+    
+        input, select {
+            padding: 5px;
+            border-radius: 5px;
+            width: 95%;
+            &::placeholder, #selectTxtPuesto {
+                font-size: .8 rem;
+                color: lightslategray;
+                font-style: italic;
+            }
+        }
+        .foto-container, .curriculum-container {
+            display: flex;
+            align-items: center;
+        }
+        button {
+            font-weight: bold;
+        }
+        input[id="txtNombre"]::placeholder {
+            color: red;
+        }
     }
 }
-::placeholder {
-    font-size: .8 rem;
-    color: lightslategray;
-    font-style: italic;
+.noVisible {
+    visibility: hidden;
 }
-input[id="txtNombre"]::placeholder {
-    color: red;
+#selectTxtPuesto option {
+    color: blue;
 }
 </style>
 </head>
@@ -146,13 +156,16 @@ input[id="txtNombre"]::placeholder {
                     </select>
 
                     <label for="foto">Foto:</label>
-                    <div>
+                    <div class="foto-container">
                         <input type="file" name="foto" id="foto" accept="image/*">
-                        <i class="fa-solid fa-file-word"></i>
+                        <i class="fa-solid fa-image noVisible"></i>
                     </div>
-
+                    
                     <label for="curriculum">Curriculum:</label>
-                    <input type="file" name="curriculum" id="curriculum" accept=".txt, .docx">
+                    <div class="curriculum-container">
+                        <input type="file" name="curriculum" id="curriculum" accept=".txt, .docx">
+                        <i class="fa-solid fa-file-word noVisible"></i>
+                    </div>
                     
                     <button type="submit">Enviar</button>
                 </form>
@@ -165,6 +178,19 @@ correo = document.querySelector("#correo")
 txtTelefono = document.querySelector("#txtTelefono")
 numExperiencia = document.querySelector("#numExperiencia")
 selectTxtPuesto = document.querySelector("#selectTxtPuesto")
+iconoFoto = document.querySelector(".foto-container i")
+iconoCurriculum = document.querySelector(".curriculum-container i")
+
+foto.onchange = function(e) {
+    console.log(e)
+    if (e.target.files.length === 0) iconoFoto.classList.add("noVisible")
+    else iconoFoto.classList.remove("noVisible")
+}
+curriculum.onchange = function(e) {
+    console.log(e)
+    if (e.target.files.length === 0) iconoCurriculum.classList.add("noVisible")
+    else iconoCurriculum.classList.remove("noVisible")
+}
 </script>
 </body>
 </html>

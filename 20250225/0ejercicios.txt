@@ -1,0 +1,28 @@
+fu.html
+tras seleccionar un fichero con un input tipo "file" mostrar el contenido del fichero seleccionado
+Se usa FileReader, readAsText y su evento .onload
+
+fu2.html
+Lo mismo que fu.html pero para un fichero de imagen (que se traen tela...)
+Se usa FileReader, readAsDataURL y su evento .onload
+
+fu3.html
+Lo mismo que fu2.html pero para varios ficheros de imagenes
+Se usa un ciclo for para recorrer el array de imagenes que se crea al seleccionar varios ficheros
+en el input tipo file.
+
+gestorvideoaudio.html
+Ejercicio sencillo que usa los elementos <video> y <audio>
+
+s1.js, s2.js, s3.js
+Ejercicios para mostrar asincronía en la ejecución. Vamos que mientras corre el código hay cosas que
+se terminan más tarde empezando antes
+
+test1.html
+ejercicio sencillo de sincronía en el que al pulsar un boton, pasan 2 segundos y a un h1 se le cambia
+el ancho. También tiene una prueba de uso de <iframe>
+
+test2-advanced-elements.html
+ejemplo de uso de varias etiquetas interesantes:
+<video> <audio> <source> <canvas> <details> <summary> <datalist> <output> <time> <wbr>
+<meter> <fieldset> <search>

@@ -1,0 +1,11 @@
+actividad6.html
+partiendo de un fichero ya creado por el profesor, añadir las variables oportunas en las líneas con
+/* INSERTAR VARIABLE */. Para practicar el uso de var() en css.
+
+css-4-grid-actividad.html
+partiendo de un fichero ya creado por el profesor, añadir el css oportuno para configurar el grid y 
+para hacer que una de las clases haga un span 2 para unir 2 posiciones del grid.
+Concretamente completar css en  /* <!-- Completar --> */
+
+l1.html
+ejercicio para practicar manipulando el DOM cambiando cosas, creando elementos, uso de getAttribute con data-, ...

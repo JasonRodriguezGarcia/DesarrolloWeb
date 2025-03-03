@@ -22,15 +22,15 @@ console.log(div.textContent) // incluye espacios
 // document.body.removeChild(div)
 
 const h1 = document.querySelector("h1")
-h1.getAttribute('title') // recuperamos atributo title
+console.log(h1.getAttribute('title')) // recuperamos atributo title
 h1.setAttribute('title', 'Otro título') // cambiamos atributo
 
-h1.classList.add('color-rojo')
+h1.classList.add('color-rojo') // añadimos clases
 h1.classList.add('borde')
 
 const d1 = document.querySelector("div")
 
-if (d1) {// si existe
+if (d1) {// comprobamos si existe
     d1.classList.add("color-rojo")
 } 
 
