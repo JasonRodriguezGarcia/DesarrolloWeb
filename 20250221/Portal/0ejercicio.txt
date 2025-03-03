@@ -1,0 +1,14 @@
+index, login y register usan server.js
+Dentro de index, login y register hay una barra de navegación que apunta a sus .html, que al clickar en unas de las
+opciones de dicha barra se genera una petición a un method GET (por defecto) y su url /index ó /login ó /register,
+la petición de esta llamada va al servidor que comprueba cuál es para url llamada y luego pasa por GET que devolverá en
+la respuesta (res.write) el fichero oportuno (index.html, login.html ó register.html).
+Además el servidor está configurado para que en el caso de register.html se hace una petición POST, se use el 
+evento 'data' que se lee poco a poco y se va añadiendo a body, que luego se usa como querystring para poder sacar
+los datos del formulario por consola del servidor, crear un fichero example.txt con dichos datos y además escribe
+en el Head del evento respuesta (res) el código 302 (encontrado) y pase a la página /thanks que la detectará el 
+servidor que la devolverá en la respuesta (res.write).
+
+registerLocalStorage.html
+Es una modificación del register.html pero que mira si ya hay antes almacenado en el localStorage la clave 'color', haciendo
+que el fondo del formulario se pase a color amarillo

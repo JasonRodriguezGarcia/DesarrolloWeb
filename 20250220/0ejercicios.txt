@@ -1,0 +1,6 @@
+a5.html
+Ejercicio en el que se manipulan los distintos elementos del DOM, que mediante varios botones se añaden o modifican
+distintos elementos de la página web.
+
+testserver1.js
+Ejercicio en el que al ejecutarse el fichero se crea el fichero test100.html con fr.writeFile

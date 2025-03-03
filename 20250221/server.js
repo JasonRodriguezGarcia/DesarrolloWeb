@@ -29,6 +29,7 @@ const server = createServer((req, res) => {
         })
     }
 
+    // creo que este fs.readFile sobra, puesto por error¿?
     fs.readFile(fileName, "utf-8", (err, data) => {
         if (err) {
             res.statusCode = 404;

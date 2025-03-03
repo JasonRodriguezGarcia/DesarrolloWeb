@@ -46,7 +46,7 @@ input[type=radio] {
 <body>
     <h1>Formulario de Registro de Estudiantes</h1>
     <!-- podría valer /login.php  -->
-    <form action="/login" method="POST" onsubmit="return validarForm();">
+    <form action="http://127.0.0.1:3000/login" method="POST" onsubmit="return validarForm();">
         <label for="txtNombre">Nombre<sup>*</sup></label><br>
         <input type="text" name="txtNombre" id="txtNombre" placeholder="nombre ..."><br>
 
@@ -82,7 +82,6 @@ function validarForm() {
     console.log("validando...")
     textErrores = ""
     correo = document.querySelector("#correo")
-    debugger
     if (document.querySelector("#txtNombre").value ==='') {
         textErrores += "Nombre vacío\n"
     }

@@ -62,6 +62,7 @@ const server = createServer((req, res) => {
                 // We set the Content-Type header
                 //res.setHeader('Content-Type', 'text/html') // text/html by default¿?, nothing happens without this line
                 res.statusCode = 302 // statusCode for FOUNDED
+                console.log("Devolviendo fichero: ", fileName)
                 res.write(data.toString())
                 console.log("url: ", url, " --- method: ", method)
                 res.end()

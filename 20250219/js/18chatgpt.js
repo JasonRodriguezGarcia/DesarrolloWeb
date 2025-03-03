@@ -17,8 +17,8 @@ function enviarMensaje() {
         document.querySelector("main").appendChild(nuevoParrafo)
         inputTexto.value = ""
         main.scrollTo(0, main.scrollHeight)
-        texto.focus()
     }
+    texto.focus()
 }
 
 function addImage() {   

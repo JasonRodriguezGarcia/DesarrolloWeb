@@ -1,0 +1,19 @@
+ex1.js
+creación en node js con fs.writeFile de un fichero .md con un contenido. Si existe el fichero reemplaza.
+
+ex1_1.js
+añadición en node js con fs.appendFile a un fichero test1.html con un contenido. Si no existe el fichero se crea.
+
+ex2.html
+muestra la suma de 2 números introducidos por teclado
+
+ex2_2.html, login.html y server.js
+ex2_2 y login.html rellenamos un formulario que al darle a enviar se hace una solicitud POST a /login que 
+muestra los campos del formulario en la consola del servidor. Server.js recoge las peticiones method (POST)
+así como las url's
+
+pseudoclas.html
+ejercicio para el uso de pseudoclases en un formulario
+
+
+

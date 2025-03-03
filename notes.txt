@@ -2,3 +2,12 @@ programas
 Agent Ransack : buscador de texto en ficheros mucho más avanzado que el de "Güindos"
 
 extensiones
+Adlock plus: bloquea publicidad
+ColorZilla: para seleccionar colores
+Guardar imagen como: para poder guardar en distintos formatos
+JSON formatter: adivina ...
+Simulador móvil: adivina ...
+Wappalizer: tecnologías con las que la web se ha realizado
+El camelizer: busca subidas/bajadas de precio de un artículo
+Page ruler: medidas de distancias en pixels dentro de la página web
+WhatFont: muestra color, tamaños fuentes

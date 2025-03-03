@@ -11,6 +11,7 @@ body {
 }
 form {
     margin: auto;
+    margin-top: 20px;
     width: 30%;
     background-color: aqua;
     color: blueviolet;
@@ -27,11 +28,16 @@ form {
         translate: -500px;
     }
 }
+/* pseudoclases se refieren a acciones */
+
+/* pseudoclase :hover */
 input:hover {
     transform: rotate(-10deg);
 }
+/* pseudoclase :checked en #acepta y que ademas tenga :hover en boton*/
 #acepta:checked+button:hover {
-
+    background-color: green;
+    color: white;
 }
 
 </style>

@@ -1,0 +1,15 @@
+18chatgpterminator.html
+Ejercicio de chatgpt ambientado en Terminator. Se pueden añadir mensajes y ficheros de imágenes generando scroll con el
+contenido.
+Mejoras:
+    - añadir nombre del fichero adjuntado
+
+19chatgpt.html
+ejercicio inicial de chatgpt a desarrollar que luego desembocó en 18chatgpterminator.html
+
+20tienda_flexgrid.html
+ejercicio de flexgrid para una tienda
+
+21test1.html
+Ejercicio en el que al pulsar varios botones se generan varias acciones vía evento onclick
+
