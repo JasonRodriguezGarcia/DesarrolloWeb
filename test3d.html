@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.triangulo {
+    --size: 150px;
+
+    top: 100px;
+    left: 500px;
+    position: absolute;
+
+    /*  es importante aplicar le propiedad transform-style con el valor preserve-3d al padre de 
+    nuestras caras, esto para mantener las transformaciones 3D de los hijos (ladoX) en relación al padre (.triangulo */
+    transform-style: preserve-3d;
+    /* El siguiente paso será dar una transformación al .cubo para darle un poco de perspectiva 
+    y facilitarnos el camino del movimiento de cara .cara. */
+    transform: rotateX(-30deg) rotateY(-30deg);
+    /* transform: perspective(700px) rotateX(-30deg) rotateY(-30deg); */
+}
+#lado1 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: calc(var(--size)*1.5) solid blue;
+}
+#lado2 {
+    position: absolute;
+    /* transform: rotateY(45deg); */
+    width: 0;
+    height: 0;
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: calc(var(--size)*1.5) solid red;
+}
+#lado3 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: calc(var(--size)*1.5) solid green;
+}
+#lado4 {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: calc(var(--size)*1.5) solid magenta;
+}
+#base {
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    background-color: black;
+    /* border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: calc(var(--size)*1.5) solid yellow; */
+}
+</style>
+<body>
+    <div class="triangulo">
+       <div class="cara" id="lado1"></div>
+        <div class="cara" id="lado2"></div>
+        <div class="cara" id="lado3"></div>
+        <div class="cara" id="lado4"></div>
+        <div class="cara" id="base"></div>
+    </div>
+</body>
+</html>
