@@ -28,3 +28,7 @@ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 para actualizar tu github local
 
 git pull
+
+*************************
+para actualizar tu github de la nube
+hacer los pasos 1º 2º 3º

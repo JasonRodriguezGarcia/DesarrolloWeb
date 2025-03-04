@@ -10,6 +10,9 @@ ejercicio inicial de chatgpt a desarrollar que luego desembocó en 18chatgptermi
 20tienda_flexgrid.html
 ejercicio de flexgrid para una tienda
 
-21test1.html
-Ejercicio en el que al pulsar varios botones se generan varias acciones vía evento onclick
+21test1.html y 23dinamico.html
+Ejercicio en el que al pulsar varios botones se generan varias acciones vía evento onclick que cambian elementos del DOM
+
+21test2.html
+Ejercicio en el que al pulsar un botone se genera una acción vía evento onclick que cambian elementos del DOM
 

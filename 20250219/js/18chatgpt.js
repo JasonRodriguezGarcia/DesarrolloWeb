@@ -24,18 +24,33 @@ function enviarMensaje() {
 function addImage() {   
     inputFichero = document.querySelector("#fichero")
     file = inputFichero.files[0]
+    fileNombre = inputFichero.files[0].name
+    console.log("file: ", file)
+    console.log("fileNombre: ", fileNombre)
     const reader = new FileReader();
 
     if (file) {
         reader.readAsDataURL(file)
 
         reader.onload = function (e) {
-            // sitodo va bien
+            // si todo va bien
             console.log("todo bien!")
+            miDiv = document.createElement("div")
             imagen = document.createElement("img")
+            fileText = document.createElement("span")
             imagen.src = e.target.result
-            imagen.classList.add("textoInput", "ficheroMargenes")
-            main.appendChild(imagen)
+            imagen.title = fileNombre
+            // imagen.classList.add("textoInput", "ficheroMargenes")
+            // main.appendChild(imagen)
+            fileText.innerHTML = fileNombre
+            fileText.style.fontSize = "10px"
+            // fileText.classList.add("textoInput", "textoInputAnchura")
+            // main.appendChild(fileText)
+            miDiv.appendChild(imagen)
+            miDiv.appendChild(fileText)
+            miDiv.classList.add("textoInput", "textoImagenTextoAnchura")
+            main.appendChild(miDiv)
+            
         }
         reader.onloadend = function (e) {
             file = ''
