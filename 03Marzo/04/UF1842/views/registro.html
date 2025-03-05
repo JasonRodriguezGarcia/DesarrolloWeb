@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    body {
+        margin: auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        width: 30%;
+        padding: 20px;
+        border: 2px solid grey;
+        border-radius: 15px;
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 15px;
+        margin: auto;
+
+        input {
+            
+        }
+    }
+
+</style>
+</head>
+<body>
+    <h1>Registro usuario</h1>
+    <form id="formu" action="/registro" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre">
+
+        <label for="correo">Correo</label>
+        <input type="text" name="correo" id="correo">
+
+        <label for="contrasena1">Contraseña</label>
+        <input type="password" name="contrasena1" id="contrasena1">
+
+        <label for="contrasena2">Verific. contraseña</label>
+        <input type="password" name="contrasena2" id="contrasena2">
+
+        <label for="checkCondiciones">Acepta condiciones</label>
+        <input type="checkbox" name="checkCondiciones" id="checkCondiciones">
+
+        <button id="botonEnvio">Enviar</button>
+    </form>
+<script>
+condiciones = document.querySelector("#checkCondiciones")
+botonEnvio = document.querySelector("#botonEnvio")
+botonEnvio.disabled = true
+
+checkCondiciones.onclick = function() {
+    botonEnvio.disabled = !condiciones.checked
+}
+    // validación datos
+
+formu.onsubmit = function() {
+
+}
+</script>
+</body>
+</html>

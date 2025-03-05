@@ -1,0 +1,15 @@
+h1 {
+    background-color: rgb(198, 152, 241);
+}
+.lose {
+    background-color: lightsalmon;
+    color: red;
+}
+.win {
+    background-color: green;
+    color: white;
+}
+fieldset {
+    border: 2px solid;
+    border-radius: 15px;
+}
