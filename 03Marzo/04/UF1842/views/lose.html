@@ -8,27 +8,17 @@
 </head>
 <body>
     <head>
-        <h1 class="lose">YOU LOOSE ...</h1>
-        <!-- <audio controls="" autoplay src="../sounds/lose.mp3"></audio> -->
+        <h1 class="lose">YOU LOSE ... in Toulouse ...</h1>
+        <!-- reproduce audio al abrir la pagina -->
+        <!-- <audio src="/sounds/lose.mp3" autoplay>
+            Tu navegador no soporta el elemento "audio"
+        </audio> -->
+        <!-- también vale -->
+        <audio autoplay>
+            <source src="/sounds/lose.mp3" type="audio/mp3">
+            <source src="/sounds/lose.wav" type="audio/wav">
+            Tu navegador no soporta el elemento "audio".
+        </audio>
     </head>
-
-<script>
-
-document.querySelector("body").addEventListener("onload", function() {
-    console.log("carga")
-    document.getElementById("demo").innerHTML = "Hello World"
-    let miAudio = new Audio("../sounds/lose.mp3")
-    miAudio.play()
-});
-
-// let miAudio = new Audio("lose.mp3")
-
-// function carga() {
-//     console.log("funciona")
-//     // miAudio.play()
-//     document.getElementById('intro').play(); 
-// }
-
-</script>
 </body>
 </html>

@@ -36,16 +36,19 @@ app.use(logger); // añadiendo midleware, ejemplo comprobación usuario logeado
 
 // añadir ruta /, para añadir mas repetir
 app.get('/', (req, res) => {
+    // devolvemos en la respuesta un fichero html
     // indicamos que el fichero está dentro de views
     res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });    
 
 app.get('/aboutus', (req, res) => {
+    // devolvemos en la respuesta un fichero html
     res.sendFile(path.join(__dirname, 'views', 'aboutus.html'));
 });
 
 app.get('/home', (req, res) => {
     // console.log("pepe");
+    // devolvemos en la respuesta una cadena que en este caso es codigo html
     res.send(`
         <html>
         <head></head>
@@ -57,21 +60,27 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/actividad', (req, res) => {
+    // devolvemos en la respuesta un fichero html
+    // indicamos que el fichero está dentro de views
     res.sendFile(path.join(__dirname, 'views', 'actividad.html'));
 });
 app.get('/win', (req, res) => {
+    // devolvemos en la respuesta un fichero html
     res.sendFile(path.join(__dirname, 'views', 'win.html'));
 });
 app.get('/lose', (req, res) => {
+    // devolvemos en la respuesta un fichero html
     res.sendFile(path.join(__dirname, 'views', 'lose.html'));
 });
 app.get('/registro', (req, res) => {
+    // devolvemos en la respuesta un fichero html
     res.sendFile(path.join(__dirname, 'views', 'registro.html'));
 });
 
 // Prueba para capturar querystring, pegar la siguiente cadena en la barra del navegador
 // http://localhost:3001/querystring?nombre=Jason&edad=52&pais=spagne
 // devolverá una cadena json con los datos metidos
+// ruta también usada en el ejercicio index.html
 app.get('/querystring', (req, res) => {
     // res.sendFile(path.join(__dirname, 'views', 'lose.html'));
     console.log("querystring ...")
@@ -85,6 +94,7 @@ app.get('/querystring', (req, res) => {
         console.log("FALTAN DATOS")
     }
     // res.json({resultado: 'ok'});
+    // devolvemos una cadena json
     res.json({nombre: nombre, edad: edad, pais: pais})
 });
 
@@ -95,6 +105,7 @@ app.post('/post', (req, res) => {
     // express.urlencoded
     const {nombre} = req.body;
     console.log(`nombre: ${nombre}`)
+    // devolvemos una cadena json
     res.json({resultado: 'ok'})
 });
 // usado en el ejercicio registro.html
@@ -105,6 +116,7 @@ app.post('/registro', (req, res) => {
     console.log(req.body)
     const {nombre, correo, contrasena1} = req.body;
     console.log(`nombre: ${nombre}`)
+    // devolvemos una cadena json
     res.json({
         resultado: 'ok',
         data: {
@@ -116,13 +128,12 @@ app.post('/registro', (req, res) => {
 });
 
 
-
 // más midleware
 // si hasta agui no encontró una ruta, ejecutar esto
 app.use((req, res) => {
     res.status(404).send("Error quillo: Página no existe");
 })
 
-app.listen(3001, () => {
+app.listen(3001, '127.0.0.1', () => {
     console.log('Server running in http://localhost:3001')
 })

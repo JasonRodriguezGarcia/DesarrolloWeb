@@ -1,5 +1,13 @@
+body {
+    margin: auto;
+    width: 50%;
+}
 h1 {
     background-color: rgb(198, 152, 241);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
 }
 .lose {
     background-color: lightsalmon;
@@ -10,6 +18,10 @@ h1 {
     color: white;
 }
 fieldset {
+    display: flex;
+    flex-direction: column;
     border: 2px solid;
     border-radius: 15px;
+    width: 30%;
+    gap: 10px;
 }

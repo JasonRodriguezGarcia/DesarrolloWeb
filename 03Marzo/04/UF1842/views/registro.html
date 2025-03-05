@@ -7,11 +7,22 @@
 <style>
     body {
         margin: auto;
+        /* background-color: blue; */
+        color: white;
+        background-image: url(/images/paisaje1.png);
+        background-size: cover;
     }
     h1 {
         text-align: center;
+        background-color: blue;
+        width: 20%;
+        margin: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
     form {
+        background-color: rgb(112, 163, 230);
         width: 30%;
         padding: 20px;
         border: 2px solid grey;
@@ -22,7 +33,7 @@
         margin: auto;
 
         input {
-            
+            width: 100%;
         }
     }
 
@@ -32,16 +43,16 @@
     <h1>Registro usuario</h1>
     <form id="formu" action="/registro" method="POST">
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre" minlength="5" maxlength="25">
 
         <label for="correo">Correo</label>
-        <input type="text" name="correo" id="correo">
+        <input type="email" name="correo" id="correo" minlength="8" maxlength="25">
 
         <label for="contrasena1">Contraseña</label>
-        <input type="password" name="contrasena1" id="contrasena1">
+        <input type="password" name="contrasena1" id="contrasena1" minlength="5" maxlength="25">
 
         <label for="contrasena2">Verific. contraseña</label>
-        <input type="password" name="contrasena2" id="contrasena2">
+        <input type="password" name="contrasena2" id="contrasena2" minlength="5" maxlength="25">
 
         <label for="checkCondiciones">Acepta condiciones</label>
         <input type="checkbox" name="checkCondiciones" id="checkCondiciones">
@@ -49,8 +60,14 @@
         <button id="botonEnvio">Enviar</button>
     </form>
 <script>
-condiciones = document.querySelector("#checkCondiciones")
-botonEnvio = document.querySelector("#botonEnvio")
+
+let body = document.querySelector("body")
+let nombre = document.querySelector("#nombre")
+let correo = document.querySelector("#correo")
+let contrasena1 = document.querySelector("#contrasena1")
+let contrasena2 = document.querySelector("#contrasena2")
+let condiciones = document.querySelector("#checkCondiciones")
+let botonEnvio = document.querySelector("#botonEnvio")
 botonEnvio.disabled = true
 
 checkCondiciones.onclick = function() {
@@ -59,7 +76,16 @@ checkCondiciones.onclick = function() {
     // validación datos
 
 formu.onsubmit = function() {
+    let errores = ""
+    if (nombre.value === "") errores += "Introduzca nombre\n"
+    if (correo.value === "") errores += "Introduzca correo\n"
+    if (contrasena1.value === "") errores += "Introduzca contraseña\n"
+    if (contrasena1.value != contrasena2.value) errores += "Contraseñas no coinciden"
 
+    if (errores.length > 0) {
+        alert("Error en datos:\n" + errores)
+        return false
+    }
 }
 </script>
 </body>
