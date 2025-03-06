@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 class="win"> YOU WIN !!</h1>
+        <!-- reproduce audio al abrir la pagina -->
+        <audio src="/sounds/win.wav" autoplay>
+            Tu navegador no soporta el elemento "audio"
+        </audio>
+        <!-- también vale -->
+        <audio autoplay>
+            <source src="/sounds/win.wav" type="audio/wav">
+            <source src="/sounds/win.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento "audio".
+        </audio>
+    </header>
+</body>
+</html>

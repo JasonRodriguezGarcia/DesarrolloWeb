@@ -1,0 +1,113 @@
+
+-0305/tiposdatos.js
+ejercicio para manejar y ver resultados con distintos tipos de datos
+-0305/text1/indexjs
+ejercicio para uso de figlet importanto tipo ES module, ya que por defecto es CommonJs
+
+index.js
+modificación para instalación librería ejs (npm install ejs) y añadido en index.js el siguiente código
+// Configuración de EJS
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+Y así poder manejar en html "tuneado" a extensión .ejs y poder recibir datos desde index.js
+ejemplo1.ejs
+    <body>
+        <h1><%=data.header%></h1>
+        <h2><%=data.titulo%></h2>
+        <p><%=isLoggedIn%></p>
+    </body>
+index.js
+    app.get('/ejemplo1', (req, res) => {
+        const data = { 
+            header: "Mi Jeder",
+            titulo: 'Home peich titulo'
+        };
+        const isLoggedIn = false;
+        res.render('ejemplo1', {data, isLoggedIn});
+    });
+
+cuenta.ejs
+    <h2>Datos registrados</h2>
+    <ul>
+        <li><%=data.nombre%></li>
+        <li><%=data.apellido%></li>
+        <li><%=data.direccion%></li>
+        <li><%=data.pais%></li>
+        <li><%=data.numPedidos%></li>
+        <li><%=data.saldoCuenta%></li>
+        <li>
+            <% if (data.suscrito) { %>
+                <span>SOCIO CON VISA ORO</span>
+            <%} else { %>
+                <span>NO SOCIO</span>
+            <%} %>
+        </li>                
+    </ul>
+index.js
+    app.get('/cuenta', (req, res) => {
+        const data = { 
+            nombre: "Perico",
+            apellido: "De los palotes",
+            direccion: "13 rue del Percebe",
+            pais: "Chiquitistán",
+            numPedidos: 50,
+            saldoCuenta: 1000,
+            suscrito: true
+        };
+        res.render('cuenta', { data });
+    });
+
+pedido.html
+ejercicio en el que metemos una cantidad de un pedido en un formulario y al pulsar ENVIAR se hace:
+action="/pedido" method="POST"
+que es procesado por index.js y presenta devuelta resultado.js con un "mensaje" con el resultado
+pedido.html (pedido también está añadido en app.get de index.js)
+    <h1>PEDIDO MATERIAL</h1>
+    <form id="formu" action="/pedido" method="POST">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" name="cantidad" id="cantidad" min="1" max="999">
+
+        <button id="botonEnvio">Enviar</button>
+    </form>
+index.js
+    app.post('/pedido', (req, res) => {
+        console.log("POST:");
+        // en lugar de chunk usamos middleware de express que codifica el body
+        // express.urlencoded
+        console.log(req.body);
+        const {cantidad} = req.body;
+        console.log(`cantidad: ${cantidad}`);
+        
+        let mensaje = "";
+        if (cantidad <= 100) {
+            // res.json({
+            //     mensaje: "El valor del pedido debe ser mayor a 100 para ser procesado."
+            // })
+            mensaje = "El valor del pedido debe ser mayor a 100 para ser procesado.";
+        } else if (cantidad > 500) {
+            // res.json({
+            //     mensaje: "El valor del pedido debe ser menor a 500 para ser procesado."
+            // })
+            mensaje = "El valor del pedido debe ser menor a 500 para ser procesado.";
+        } else
+            mensaje = "Gracias. Pedido procesado.";
+        // devolvemos una cadena json
+        // res.json({
+        //     resultado: 'ok',
+        //     data: {
+        //         cantidad: cantidad,
+        //     }
+        // })
+        // uso de ejs
+        // res.render("resultado", {mensaje});
+        res.status(200).render("resultado", {mensaje});
+    });
+
+resultado.ejs
+    <body>
+        <h1><%=mensaje%></h1>
+    </body>
+
+
+

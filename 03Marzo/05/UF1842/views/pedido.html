@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+        body {
+        margin: auto;
+        /* background-color: blue; */
+        color: white;
+        background-image: url(/images/paisaje1.png);
+        background-size: cover;
+    }
+    h1 {
+        text-align: center;
+        background-color: blue;
+        width: 40%;
+        margin: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    form {
+        background-color: rgb(112, 163, 230);
+        width: 20%;
+        padding: 20px;
+        border: 2px solid grey;
+        border-radius: 15px;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 15px;
+        margin: auto;
+
+        input {
+            width: 100%;
+        }
+    }
+
+</style>
+</head>
+<body>
+    <h1>PEDIDO MATERIAL</h1>
+    <form id="formu" action="/pedido" method="POST">
+        <label for="cantidad">Cantidad</label>
+        <input type="number" name="cantidad" id="cantidad" min="1" max="999">
+
+        <button id="botonEnvio">Enviar</button>
+    </form>
+</body>
+</html>

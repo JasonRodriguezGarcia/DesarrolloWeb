@@ -37,6 +37,7 @@
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid red;
+    transform: rotateX(45deg) rotateY(45deg);
 }
 #lado3 {
     position: absolute;
@@ -56,8 +57,9 @@
 }
 #base {
     position: absolute;
-    width: var(--size);
-    height: var(--size);
+    top: 230px;
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 1.5);
     background-color: black;
     /* border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
@@ -66,10 +68,10 @@
 </style>
 <body>
     <div class="triangulo">
-       <div class="cara" id="lado1"></div>
+        <div class="cara" id="lado1"></div>
         <div class="cara" id="lado2"></div>
-        <div class="cara" id="lado3"></div>
-        <div class="cara" id="lado4"></div>
+        <!-- <div class="cara" id="lado3"></div>
+        <div class="cara" id="lado4"></div> -->
         <div class="cara" id="base"></div>
     </div>
 </body>
