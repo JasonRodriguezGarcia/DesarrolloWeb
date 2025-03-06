@@ -37,7 +37,8 @@
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid red;
-    transform: rotateX(45deg) rotateY(45deg);
+    /* transform: rotateX(45deg) rotateY(45deg); */
+    transform: rotateY(90deg) translateZ(150px) translateX(150px);
 }
 #lado3 {
     position: absolute;
@@ -46,6 +47,7 @@
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid green;
+    transform: rotateY(90deg) translateZ(-150px) translateX(150px);
 }
 #lado4 {
     position: absolute;
@@ -54,24 +56,23 @@
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid magenta;
+    transform: translateZ(-300px);
 }
 #base {
     position: absolute;
     top: 230px;
     width: calc(var(--size) * 2);
-    height: calc(var(--size) * 1.5);
+    height: calc(var(--size) * 2);
     background-color: black;
-    /* border-left: var(--size) solid transparent;
-    border-right: var(--size) solid transparent;
-    border-bottom: calc(var(--size)*1.5) solid yellow; */
+    transform: rotateX(-90deg) translateY(115px) translateZ(-115px);
 }
 </style>
 <body>
     <div class="triangulo">
         <div class="cara" id="lado1"></div>
         <div class="cara" id="lado2"></div>
-        <!-- <div class="cara" id="lado3"></div>
-        <div class="cara" id="lado4"></div> -->
+        <div class="cara" id="lado3"></div>
+        <div class="cara" id="lado4"></div>
         <div class="cara" id="base"></div>
     </div>
 </body>

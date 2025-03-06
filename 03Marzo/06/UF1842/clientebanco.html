@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    body {
+        margin: auto;
+        /* background-color: blue; */
+        color: white;
+        background-image: url(/03Marzo/06/UF1842/public/images/banco2.jpg);
+        background-size: 140%;
+        background-position: -200px -200px;
+    }
+    h1 {
+        text-align: center;
+        background-color: blue;
+        width: 40%;
+        margin: auto;
+        border-radius: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    form {
+        background-color: rgb(112, 163, 230);
+        width: 20%;
+        padding: 20px;
+        border: 2px solid grey;
+        border-radius: 15px;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+        margin: auto;
+        
+        input {
+            width: 100%;
+        }
+    }
+    .dialogo {
+        /* width: 80%; */
+        border-radius: 10px;
+        background-color: lightskyblue;
+        font-family: 'Courier New', Courier, monospace;
+
+    }
+    dialog::backdrop {
+        backdrop-filter: blur(4px);
+    }
+</style>
+</head>
+<body>
+    <h1>ESTADO BANCO</h1>
+    <form id="formu" action="" method="">
+        <label for="saldo">Saldo €</label>
+        <input type="number" name="saldo" id="saldo" min="1" max="999999">
+        
+        <label for="transacciones">Nº Transacciones</label>
+        <input type="number" name="transacciones" id="transacciones" min="1" max="999">
+        
+
+        <label for="preferente">Preferente</label>
+        <input type="checkbox" name="preferente" id="preferente">        
+
+        <button id="botonEnvio">Enviar</button>
+        <button id="botonEnvio2">Enviar</button>
+    </form>
+<script>
+    let body = document.querySelector("body")
+    let saldo = document.querySelector("#saldo")
+    let transacciones = document.querySelector("#transacciones")
+    let transacciones2 = document.getElementById("transacciones").value
+    let preferente = document.querySelector("#preferente")
+    let dialogo = document.createElement("dialog")
+    dialogo.classList.add = "dialogo"
+    dialogo.style.borderRadius = "10px"
+
+    botonEnvio2.addEventListener("click", () => {
+        console.log("funciona!!!")
+    })
+
+    botonEnvio.onclick = function() {
+        event.preventDefault()
+        debugger
+        if (saldo.value > 10000) {
+            if (preferente.checked) dialogo.innerHTML = "💲💲Tengo unas entradas sin dueño ... do you ...?"
+            else dialogo.innerHTML = "👌👌Tiene que abrir una cuenta premium !!"
+        }
+        else if (saldo.value >= 1000 && transacciones.value < 3){
+            dialogo.innerHTML = "🤔🤔atención deberá mantener el saldo"
+        }else if (saldo.value < 1000) dialogo.innerHTML = "☹️☹️Podría haber cargos por saldo insuficiente"
+        else dialogo.innerHTML = "🙂🙂Estas en el candelero !!"
+        dialogo.innerHTML += "<br>"
+        botonDialogo = document.createElement("button")
+        botonDialogo.innerHTML = "CERRAR"
+        botonDialogo.onclick = "dialogo.close"
+        dialogo.appendChild(botonDialogo)
+        body.appendChild(dialogo)
+        dialogo.showModal()
+    }
+</script>
+</body>
+</html>

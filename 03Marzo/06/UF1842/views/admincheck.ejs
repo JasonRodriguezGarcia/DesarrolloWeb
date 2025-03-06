@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>INFORMACION LOGGIN</h1>
+        <section>
+            <h2>Datos usuario logeado</h2>
+            <ul>
+                <li>
+                    <% if (data.isAdmin) { %>
+                        <span>Wellcome Dr. Falken. What game do you want to play?</span>
+                    <%} else { %>
+                        <span>Hi "mortal" user. Do you want to play chess?</span>
+                    <%} %>
+                </li>                
+            </ul>
+        </section>
+    </main>
+                
+</body>
+</html>
