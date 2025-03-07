@@ -8,9 +8,11 @@
 <style>
 body {
     user-select: none;
+
 }
 .triangulo {
     --size: 150px;
+    --rotacionX: 42deg;
 
     top: 45%;
     left: 45%;
@@ -99,7 +101,7 @@ body {
     </div>
     <label for="tamano">Tamaño px:</label>
     <input type="range" name="tamano" id="tamano" value="150" min="100" max="300">
-    <span class="indicator" id="incrementar">➕</span><span id="tamanoSpan">150 px</span><span class="indicator" id="decrementar">➖</span >
+    <span class="indicator" id="incrementar">➕</span><span id="tamanoSpan">150px</span><span class="indicator" id="decrementar">➖</span >
 <script>
     tamano = document.querySelector("#tamano")
     tamanoSpan = document.querySelector("#tamanoSpan")
@@ -108,19 +110,20 @@ body {
     lado4 = document.querySelector("#lado4")
 
     tamano.oninput = function() {
-        tamanoSpan.innerHTML = tamano.value
+        tamanoSpan.innerHTML = tamano.value + 'px'
         document.querySelector('.triangulo').style.setProperty('--size', tamano.value + 'px')
     }
 
     incrementar.onclick = function() {
-        debugger
-        tamano.value ++
-        tamanoSpan.innerHTML = tamano.value + "px"
-        document.querySelector('.triangulo').style.setProperty('--size', tamano.value + 'px')
+        incDecPx("inc")
     }
     decrementar.onclick = function() {
-        debugger
-        tamano.value --
+        incDecPx("dec")
+    }
+    function incDecPx(incrDecr) {
+        if (incrDecr === "inc") tamano.value ++
+        else tamano.value --
+        
         tamanoSpan.innerHTML = tamano.value + "px"
         document.querySelector('.triangulo').style.setProperty('--size', tamano.value + 'px')
     }

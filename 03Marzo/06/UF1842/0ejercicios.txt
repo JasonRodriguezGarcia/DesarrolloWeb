@@ -1,0 +1,25 @@
+tiposdatos.js
+ejercicio para manejar y ver resultados con distintos tipos de datos (ampliación día anterior)
+
+bucles.js bucles2.js
+ejercicio para manejar y ver resultados con distintos ciclos
+
+if.js clientebanco.html
+ejercicio para manejar "if"
+
+clientebanco.html
+ejercicio en el que rellenamos un formulario y usamos lógica on if devolviendo un resultados
+
+testlistaelementos.html
+uso de "for" en el que recorremos unos "items" modificando su estilo
+
+index.js 
+modificado añadiendo las rutas 
+/admincheck
+    poniendo la ruta localthos:300/admincheck hará que index.js pase un objeto "data" a admincheck.ejs 
+    en el que mediante EJS (Motor de plantillas EJS) hacemos una lógica con un "if" para que dependiendo 
+    del valor de data.isAdmin muestra en un <li> un texto <span> u otro
+/bucle
+    poniendo la ruta localthos:300/bucle hará que index.js pase el array "numeros" a bucle.ejs en el
+    que mediante un for iremos imprimiendo <li> dentro de un <ul>
+
