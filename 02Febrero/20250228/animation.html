@@ -6,10 +6,7 @@
     <title>Document</title>
 <style>
 :root {
-    --x1: random(800%, 1600%); --y1: random(400%, 800%);
-    --x2: random(800%, 1600%); --y2: random(400%, 800%);
-    --x3: random(800%, 1600%); --y3: random(400%, 800%);
-    --x4: random(800%, 1600%); --y4: random(400%, 800%);
+    /* --x1: 800px; */
 }
 body {
     /* color:cornflowerblue */
@@ -32,13 +29,13 @@ h1 {
 }
 
 @keyframes desplazamiento {
-  from {
-    transform: translateX(110%);
-  }
-
-  to {
-    transform: translateX(0%);
-  }
+    from {
+        transform: translateX(110%);
+    }
+    
+    to {
+        transform: translateX(0%);
+    }
 }
 /* movimiento en 5 secuencias */
 .banner1 {
@@ -98,6 +95,13 @@ h1 {
     75% { opacity: .3; transform: translate(800%, 100%); }
     100% { opacity: .8; transform: translate(1600%, 100%); }
 }
+@keyframes animation4 {
+    0% { opacity: .8; transform: translate(var(--x1), var(--y1));}
+    25% { opacity: .6; transform: translate(var(--x2), var(--y2)); }
+    50% { opacity: .2; transform: translate(var(--x3), var(--y3)); }
+    75% { opacity: .3; transform: translate(var(--x4), var(--y4)); }
+    100% { opacity: .8; transform: translate(var(--x1), var(--y1)); }
+}
 .banner4 {
     position: absolute;
     width: 50px;
@@ -109,13 +113,11 @@ h1 {
     animation-iteration-count: infinite; */
     animation: animation4 3s linear infinite;
     animation-direction: alternate;
-}
-@keyframes animation4 {
-    0% { opacity: .8; transform: translate(random(800px, 1600px), random(400px, 800px));}
-    25% { opacity: .6; transform: translate(random(800px, 1600px), random(400px, 800px)); }
-    50% { opacity: .2; transform: translate(random(800px, 1600px), random(400px, 800px)); }
-    75% { opacity: .3; transform: translate(random(800px, 1600px), random(400px, 800px)); }
-    100% { opacity: .8; transform: translate(random(800px, 1600px), random(400px, 800px)); }
+    --x1: random(800%, 1600%);
+     --y1: random(400%, 800%);
+    --x2: random(800%, 1600%); --y2: random(400%, 800%);
+    --x3: random(800%, 1600%); --y3: random(400%, 800%);
+    --x4: random(800%, 1600%); --y4: random(400%, 800%);
 }
 /* estiramiento horizontal (a lo Rajoy pero en horizontal) */
 .banner5 {
@@ -128,15 +130,15 @@ h1 {
     animation: animation5 3s  infinite;
 }
 @keyframes animation5 {
-  from {
-    margin-left: 0;
-    width: 50%;
-  }
+    from {
+        margin-left: 0;
+        width: 50%;
+    }
 
-  to {
-    margin-left: 0;
-    width: 0;
-  }
+    to {
+        margin-left: 0;
+        width: 0;
+    }
 }
 </style>
 </head>
@@ -151,5 +153,9 @@ h1 {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
+<script>
+    const randomValue = Math.floor(Math.random() * (1600 - 800 + 1)) + 800; // Genera un número entre 800 y 1600
+document.querySelector(".banner4").style.setProperty('--x1', `${randomValue}px`);
+</script>
 </body>
 </html>

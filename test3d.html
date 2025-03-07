@@ -6,57 +6,75 @@
     <title>Document</title>
 </head>
 <style>
+body {
+    user-select: none;
+}
 .triangulo {
     --size: 150px;
 
-    top: 100px;
-    left: 500px;
+    top: 45%;
+    left: 45%;
     position: absolute;
-
     /*  es importante aplicar le propiedad transform-style con el valor preserve-3d al padre de 
     nuestras caras, esto para mantener las transformaciones 3D de los hijos (ladoX) en relación al padre (.triangulo */
     transform-style: preserve-3d;
     /* El siguiente paso será dar una transformación al .cubo para darle un poco de perspectiva 
     y facilitarnos el camino del movimiento de cara .cara. */
-    transform: rotateX(-30deg) rotateY(-30deg);
     /* transform: perspective(700px) rotateX(-30deg) rotateY(-30deg); */
 }
+
+.triangulo {
+    animation: rotate 4s infinite linear;
+}
+@keyframes rotate {
+    0% {
+        transform: rotateX(0deg) rotateZ(0deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateZ(360deg);
+    }
+}
+
 #lado1 {
     position: absolute;
+    transform-origin: bottom center;
     width: 0;
     height: 0;
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid blue;
+    transform: rotateX(42deg);
 }
 #lado2 {
     position: absolute;
-    /* transform: rotateY(45deg); */
+    transform-origin: bottom center;
     width: 0;
     height: 0;
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid red;
-    /* transform: rotateX(45deg) rotateY(45deg); */
-    transform: rotateY(90deg) translateZ(150px) translateX(150px);
+    transform: rotateY(90deg) translateZ(150px) translateX(150px) rotateX(42deg);
+
 }
 #lado3 {
     position: absolute;
+    transform-origin: bottom center;
     width: 0;
     height: 0;
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid green;
-    transform: rotateY(90deg) translateZ(-150px) translateX(150px);
+    transform: rotateY(90deg) translateZ(-150px) translateX(150px) rotateX(-42deg);
 }
 #lado4 {
     position: absolute;
+    transform-origin: bottom center;
     width: 0;
     height: 0;
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: calc(var(--size)*1.5) solid magenta;
-    transform: translateZ(-300px);
+    transform: translateZ(-300px)  rotateX(-42deg);
 }
 #base {
     position: absolute;
@@ -64,7 +82,11 @@
     width: calc(var(--size) * 2);
     height: calc(var(--size) * 2);
     background-color: black;
-    transform: rotateX(-90deg) translateY(115px) translateZ(-115px);
+    transform: rotateX(-90deg) translateY(150px) translateZ(-155px);
+}
+.indicator:hover {
+    /* background-color: lightgray; */
+    filter: invert(50%)
 }
 </style>
 <body>
@@ -75,5 +97,33 @@
         <div class="cara" id="lado4"></div>
         <div class="cara" id="base"></div>
     </div>
+    <label for="tamano">Tamaño px:</label>
+    <input type="range" name="tamano" id="tamano" value="150" min="100" max="300">
+    <span class="indicator" id="incrementar">➕</span><span id="tamanoSpan">150 px</span><span class="indicator" id="decrementar">➖</span >
+<script>
+    tamano = document.querySelector("#tamano")
+    tamanoSpan = document.querySelector("#tamanoSpan")
+    incrementar = document.querySelector("#incrementar")
+    decrementar = document.querySelector("#decrementar")
+    lado4 = document.querySelector("#lado4")
+
+    tamano.oninput = function() {
+        tamanoSpan.innerHTML = tamano.value
+        document.querySelector('.triangulo').style.setProperty('--size', tamano.value + 'px')
+    }
+
+    incrementar.onclick = function() {
+        debugger
+        tamano.value ++
+        tamanoSpan.innerHTML = tamano.value + "px"
+        document.querySelector('.triangulo').style.setProperty('--size', tamano.value + 'px')
+    }
+    decrementar.onclick = function() {
+        debugger
+        tamano.value --
+        tamanoSpan.innerHTML = tamano.value + "px"
+        document.querySelector('.triangulo').style.setProperty('--size', tamano.value + 'px')
+    }
+</script>
 </body>
 </html>
