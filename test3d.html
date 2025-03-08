@@ -101,7 +101,9 @@ body {
     </div>
     <label for="tamano">Tamaño px:</label>
     <input type="range" name="tamano" id="tamano" value="150" min="100" max="300">
-    <span class="indicator" id="incrementar">➕</span><span id="tamanoSpan">150px</span><span class="indicator" id="decrementar">➖</span >
+    <span class="indicator" id="incrementar" onclick="incDecPx('inc')">➕</span>
+    <span id="tamanoSpan">150px</span>
+    <span class="indicator" id="decrementar" onclick="incDecPx('dec')">➖</span >
 <script>
     tamano = document.querySelector("#tamano")
     tamanoSpan = document.querySelector("#tamanoSpan")
@@ -114,12 +116,12 @@ body {
         document.querySelector('.triangulo').style.setProperty('--size', tamano.value + 'px')
     }
 
-    incrementar.onclick = function() {
-        incDecPx("inc")
-    }
-    decrementar.onclick = function() {
-        incDecPx("dec")
-    }
+    // incrementar.onclick = function() {
+    //     incDecPx("inc")
+    // }
+    // decrementar.onclick = function() {
+    //     incDecPx("dec")
+    // }
     function incDecPx(incrDecr) {
         if (incrDecr === "inc") tamano.value ++
         else tamano.value --
