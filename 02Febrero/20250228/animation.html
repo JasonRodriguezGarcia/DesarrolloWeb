@@ -154,8 +154,37 @@ h1 {
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, corporis. Architecto error eaque eos odio quaerat. Esse quam tempore provident beatae velit quia doloribus ratione, possimus accusantium, modi atque. Eius!</p>
 <script>
-    const randomValue = Math.floor(Math.random() * (1600 - 800 + 1)) + 800; // Genera un número entre 800 y 1600
-document.querySelector(".banner4").style.setProperty('--x1', `${randomValue}px`);
+// const randomValue1 = Math.floor(Math.random() * (1600 - 800 + 1)) + 800; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--x1', `${randomValue1}%`);
+// const randomValue2 = Math.floor(Math.random() * (800 - 400 + 1)) + 400; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--y1', `${randomValue2}%`);
+// const randomValue3 = Math.floor(Math.random() * (1600 - 800 + 1)) + 800; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--x2', `${randomValue3}%`);
+// const randomValue4 = Math.floor(Math.random() * (800 - 400 + 1)) + 400; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--y2', `${randomValue4}%`);
+// const randomValue5 = Math.floor(Math.random() * (1600 - 800 + 1)) + 800; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--x3', `${randomValue5}%`);
+// const randomValue6 = Math.floor(Math.random() * (800 - 400 + 1)) + 400; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--y3', `${randomValue6}%`);
+// const randomValue7 = Math.floor(Math.random() * (1600 - 800 + 1)) + 800; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--x4', `${randomValue7}%`);
+// const randomValue8 = Math.floor(Math.random() * (800 - 400 + 1)) + 400; // Genera un número entre 800 y 1600
+// document.querySelector(".banner4").style.setProperty('--y4', `${randomValue8}%`);
+arrayCoordenadas = [ "x1", "y1", "x2", "y2", "x3", "y3", "x4", "y4"]
+let coordenadaTop = 0
+let coordenadaBot = 0
+for (let index = 0; index < arrayCoordenadas.length; index++) {
+    debugger
+    if (arrayCoordenadas[index][0] === 'x') {
+        coordenadaTop = 1600
+        coordenadaBot = 400
+    } else {
+        coordenadaTop = 800
+        coordenadaBot = 400
+    }
+    const randomValue = Math.floor(Math.random() * (coordenadaTop - coordenadaBot + 1)) + coordenadaBot;
+    document.querySelector(".banner4").style.setProperty(`--${arrayCoordenadas[index]}`, `${randomValue}%`);
+}
 </script>
 </body>
 </html>
