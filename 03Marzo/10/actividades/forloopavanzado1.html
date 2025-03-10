@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <h1>Ordenar la lista de items</h1>
+
+    <ul id="item-list">
+    <!-- Popular la lista de items aqui -->
+    </ul>
+
+    <button id="sortbtn">Sort Alphabetically</button>
+<script>
+
+  // Initial array of elements
+  let items = ["Banana", "Apple", "Orange", "Mango", "Grapes"];
+  mostrar(items)
+
+  // Crear una function para mostrar los items
+    function mostrar(array) {
+        for (index = 0; index < items.length; index++){
+            elementoIL = document.createElement("li")
+            elementoIL.innerHTML = array[index]
+            document.querySelector("ul").appendChild(elementoIL)
+        }
+    }
+
+    sortbtn.onclick = function() {
+        // Crear una function para ordenar los items
+        let lista = document.querySelector("#item-list")
+        lista.innerHTML = ""
+        console.log(lista)
+        lista = Array.from(items)
+        lista.sort()
+        mostrar(lista)
+        console.log(lista)
+    }
+
+  // ¿? Agregar un listener o una funcion para ejecutar la funcion de ordenar y mostrarlos de nuevo.
+
+</script>
+</html>

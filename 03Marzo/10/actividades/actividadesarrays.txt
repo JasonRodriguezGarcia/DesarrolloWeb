@@ -1,0 +1,151 @@
+// Arrays
+
+let coches = ["Toyota", "Ferrari", "Mercedes"];
+coches[1] = "Tesla"; 
+coches.push("Chevrolet");
+
+// Mostrar 'Mercedes'
+// Cambiar el primer elemento a 'BMW'
+// Eliminar el último elemento usando pop()
+// Buscar el índice de 'BMW' usando IndexOf(...) - si no existe un valor, ¿que resultado consigues?
+// Verificar si existe 'Toyota' en el array usando .includes(...). ¿Qué valor devuelve?
+// ¿Qué hace coches.sort(); y coches.reverse();?
+
+
+
+
+let mixedArray = [42, "Hello", true, { name: "Alice" }, [1, 2, 3], null];
+
+// ¿Funciona?
+for (let index = 0; index < mixedArray; index++) {
+    console.log(`Valor es ${mixedArray[index]}`);
+    console.log();
+}
+
+// ¿Funciona?
+for (let name of mixedArray) {
+    console.log(Valor es ${mixedArray});
+}
+
+// Queremos imprimir solo los tipos ded datos string y number. Usar un bucle for y typeof
+
+
+
+// Has recibido datos de un formulario FORM de HTML
+
+let usuario = {
+  nombre: "Juan",
+  edad: undefined,  // Edad no proporcionada
+};
+
+// Verificamos si el nombre y la edad son válidos.
+// Crear una funcion para verificar el usuario : verificamosUsuario(user)
+// Comprobar que los tipos de datos no son undefined ni null
+
+
+// ¿Qué tipo de dato es saludar
+const saludar = function(name) {
+  return `Hola, ${name}!`;
+};
+
+
+let str = "Hello";
+let arr = str.split('')
+// ¿Qué tipo de dato es arr?
+// Cambiar 'Hello' a HellA'
+
+
+let arr = ["a", "b", "c"];
+let str = arr.join(''); 
+
+// ¿Cual es el valor de str?
+// y si hacemos let str = arr.join(','); 
+
+
+
+//Arrays de objetos
+const peliculas = [
+  {
+      titulo: "Inception",
+      director: "Christopher Nolan",
+      año: 2010
+  },
+  {
+      titulo: "Interstellar",
+      director: "Christopher Nolan",
+      año: 2014
+  }
+];
+
+console.log(peliculas);
+
+// mostrar los titulos de las peliculas
+// agregar unna nueva pelicula al array
+
+
+// -------- Respuestas -------
+
+
+function verificamosUsuario(user) {
+  // Verificamos si el nombre y la edad son válidos
+  if (user.name === null || user.name === undefined) {
+    console.log("El nombre es requerido.");
+  } else {
+    console.log("Nombre: " + user.name);
+  }
+
+  if (user.age === null || user.age === undefined) {
+    console.log("La edad es requerida.");
+  } else {
+    console.log("Edad: " + user.age);
+  }
+}
+
+
+
+// Permisos de gimnasio
+let edad = 20;  // Edad del usuario
+let tienePermiso = true;  // Si el usuario tiene permiso de los padres
+
+// Verificamos si el usuario puede entrar al gimnasio
+if (edad >= 18) {
+  console.log("Acceso permitido: Puedes entrar al gimnasio.");
+} else if (edad < 18 && tienePermiso) {
+  console.log("Acceso permitido: Eres menor de edad pero tienes el permiso de tus padres.");
+} else {
+  console.log("Acceso denegado: Necesitas ser mayor de edad o tener el permiso de tus padres.");
+}
+
+
+let pelicula = {
+  titulo: "Inception",
+  director: "Christopher Nolan",
+  año: 2010
+};
+
+function imprimirPelicula(pelicula) {
+  console.log(`Título: ${pelicula.titulo}`);
+  console.log(`Director: ${pelicula.director}`);
+  console.log(`Año: ${pelicula.año}`);
+}
+
+// Llamar a la función para imprimir la película
+imprimirPelicula(pelicula);
+
+
+
+let mixedArray = [42, "Hello", true, { name: "Alice" }, [1, 2, 3], null];
+
+for (let item of mixedArray) {
+    if (typeof item === "string" || typeof item === "number") {
+        console.log(`Valor es ${item}`);
+    }
+}
+
+
+
+
+
+
+// Eliminar una película por índice (ej. eliminar "Inception" que está en el índice 0)
+peliculas.splice(0, 1); // Elimina 1 elemento en el índice 0

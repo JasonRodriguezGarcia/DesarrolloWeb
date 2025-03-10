@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Enviar Historia de Usuario</h1>
+
+    </header>
+    <form id="formulario" action="/historiausuario" method="POST">
+        <fieldset>
+            <legend>Detalles de la historia</legend>
+
+            <label for="historiaTXT">Historia de usuario:</label>
+            <textarea name="historiaTXT" id="historiaTXT" 
+                rows="5"
+                placeholder="Usar formato COMO... QUIERO... PARA"></textarea>
+
+            <label for="prioridad">prioridad</label>
+            <select name="prioridad" id="prioridad">
+                <option namevalue="alta" default>Alta</option>
+                <option namevalue="media">Media</option>
+                <option namevalue="baja">Baja</option>
+            </select>
+
+            <label for="fechaCaptura">Fecha de captura</label>
+            <input type="date" name="fechaCaptura" id="fechaCaptura">
+
+            <label for="responsable">Responsable</label>
+            <input type="text" name="responsable" id="responsable" minlength="5" maxlength="25">
+            
+            <button>Enviar</button>
+        </fieldset>
+    </form>
+    <% if (mensajeError.mensaje != "") {%>
+        <p><%=mensajeError.mensaje %></p>
+    <% }%>
+    
+<script>
+    historiaTXT = document.querySelector("#historiaTXT")
+    // prioridad = document.querySelector("#prioridad")
+    fechaCaptura = document.querySelector("#fechaCaptura")
+    responsable = document.querySelector("#responsable")
+
+    formulario.onsubmit = function() {
+        console.log("submit")
+        let errores = ""
+        if (historiaTXT.value === "")
+            errores += "\nFalta historia"
+        if (fechaCaptura.value === "")
+            errores += "\nFalta fecha"
+        if (responsable.value === "")
+            errores += "\nFalta responsable"
+
+        if (errores.length != 0) {
+            alert(errores)
+            return false
+        }
+        // return true
+    }
+</script>
+</body>
+</html>

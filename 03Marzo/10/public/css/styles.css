@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    background-color: blue;
+}
+header {
+    margin: auto;
+    width: 40%;
+    background-color: aqua;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+}
+
+form {
+    width: 30%;
+    margin: auto;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    padding: 20px;
+    
+    fieldset {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+
+        button {
+            background-color: green;
+            color: white;
+        }
+    }
+}

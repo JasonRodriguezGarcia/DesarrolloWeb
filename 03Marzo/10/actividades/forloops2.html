@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <button id="boton">CAmbiar coLOR</button>
+</body>
+<script>
+    let items = document.getElementsByClassName('item');
+    
+    boton.onclick = function() {
+        for (let index = 0; index < items.length; index++) {
+            items[index].style.color = "blue"
+        }
+    }
+</script>
+</html>
