@@ -32,3 +32,9 @@ git pull
 *************************
 para actualizar tu github de la nube
 hacer los pasos 1º 2º 3º
+*************************
+
+git config --global user.name "Jason RG"
+git config --global user.email "jasonrodriguezempleo@gmail.com"
+
+*************************
