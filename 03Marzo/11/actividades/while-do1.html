@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While Loop Example</title>
+<style>
+body {
+    display: flex;
+    gap: 40px;
+
+}
+</style>
+</head>
+<body>
+    <h2>Mostrar numeros con un bucle WHILE</h2>
+    <div id="number-list"></div>
+    <div id="number-list2"></div>
+    
+
+    <script>
+        // ciclo list
+        let number = 1;  // Empezar
+        let output = '';  // Crear una variable para guardar el resultado
+
+        // Usar bucle while para mostrar los numeros 1 a 5 dentro de una etiqueta <p>
+            while (number <= 5) {
+            output += '<p>Number: ' + number + '</p>';  // Crear un <p> para cada número
+            number++
+        }
+        // Insertar el resultado en el elemento HTML
+        document.getElementById("number-list").innerHTML = output;        number = 5
+        while (number >= 1) {
+            output += '<p>Number: ' + number + '</p>';  // Crear un <p> para cada número
+            number--
+        }
+        // Insertar el resultado en el elemento HTML
+        document.getElementById("number-list").innerHTML = output;
+
+        // ciclo list
+        number = 1;  // Empezar
+        output = '';  // Crear una variable para guardar el resultado
+
+        // Usar bucle while para mostrar los numeros 1 a 5 dentro de una etiqueta <p>
+        do 
+        {
+            output += '<p>Number: ' + number + '</p>';  // Crear un <p> para cada número
+            number++
+        } while (number <= 5)
+    
+        // Insertar el resultado en el elemento HTML
+        document.getElementById("number-list2").innerHTML = output;
+        // number = 5
+        // do {
+        //     output += '<p>Number: ' + number + '</p>';  // Crear un <p> para cada número
+        //     number--
+        // }
+        // while (number >= 1)
+
+        // Insertar el resultado en el elemento HTML
+        // document.getElementById("number-list2").innerHTML = output;
+    </script>
+</body>
+</html>

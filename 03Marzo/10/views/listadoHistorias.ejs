@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    
+</style>
 <body>
     <table>
         <tr>
@@ -16,6 +19,9 @@
         <% arrHistoriasUsuarios.forEach(historia => {%>
             <tr>
                 <td><%=historia.responsable%></td>
+                <td><%=historia.fechaCaptura%></td>
+                <td><%=historia.prioridad%></td>
+                <td><%=historia.historiaTXT%></td>
             </tr>
         <% })%>
     </table>

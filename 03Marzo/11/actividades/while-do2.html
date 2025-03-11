@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="number-list"></div>
+    <div class="number-list2"></div>
+    <div class="number-list3"></div>
+<script>
+    let numeros = [
+        {numero: 1, texto: "bat"},
+        {numero: 2, texto: "bi"},
+        {numero: 3, texto: "hiru"},
+        {numero: 4, texto: "lau"},
+        {numero: 5, texto: "bost"},
+    ]
+
+    let output = ""
+    let contador = 0
+    while (contador < numeros.length) {
+        output += `<p>${numeros[contador].numero} - ${numeros[contador].texto}</p>`
+        contador++
+    }
+    document.querySelector(".number-list").innerHTML = output + "******"
+    numeros.reverse()
+    output = ""
+    numeros.forEach(element => {
+        output += `<p>${element.numero} - ${element.texto}</p>`
+    });
+    document.querySelector(".number-list2").innerHTML = output + "******"
+    output = ""
+    numeros2 = numeros.filter(element => 
+        [3, 4].includes(element.numero)
+    );
+    output = ""
+    numeros2.forEach(element => {
+        output += `<p>${element.numero} - ${element.texto}</p>`
+    });
+    document.querySelector(".number-list3").innerHTML = output + "******"
+</script>
+</body>
+</html>

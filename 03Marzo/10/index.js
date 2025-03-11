@@ -1,4 +1,5 @@
 import express from 'express';
+import fs from "node:fs"
 // path fileURLToPatch a añadir junto a __filename __dirname
 // ya que no están en ES Modules
 
@@ -22,7 +23,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 ///////////////// borrar en el futuro
-const arrHistoriasUsuarios = [
+
+const arrHistoriasUsuarios2 = [
     {
         historiaTXT: 'Hacer café',
         prioridad: 'Alta',
@@ -47,9 +49,19 @@ const arrHistoriasUsuarios = [
         fechaCaptura: '2025-03-11',
         responsable: 'Pepeillo'
     },
-
-
 ]
+let arrHistoriasUsuarios = []
+fs.readFile("test100.json", "utf-8", (error, data) => {
+    if (error) {
+        console.log("archivo no existe test100.json")
+    }
+    else {
+        arrHistoriasUsuarios = JSON.parse(data.toString())
+        console.log ("imprimo arrHistoriasUsuarios: ", arrHistoriasUsuarios)
+    }
+});
+
+
 /////////////////
 // middleware que se pone tras instanciar la app
 // indicamos que las páginas estáticas están en public
@@ -273,6 +285,14 @@ app.post('/historiausuario', (req, res) => {
         // res.redirect("/") // probar y mirar internet
         // res.status(200).render('bucle', { numeros });
         // res.redirect("listadoHistorias")
+        arrHistoriasUsuarios.push(req.body)
+        fs.writeFile("test100.json", JSON.stringify(arrHistoriasUsuarios), (err) => {
+            if (err) {
+                console.log("Hay un error, si eso también ya tal ...")
+            } else {
+                console.log("Exito al crear archivo")
+            }
+        })
         res.render('listadoHistorias', { arrHistoriasUsuarios });
     }
 });
