@@ -24,3 +24,6 @@ que sería detectada por el servidor que ejecuta el siguiente código:
             a cadena .jsony
         - presenta listadoHistorias.ejs al que le pasa el arrHistoriasUsuarios que ejecuta un ciclo en el que
             muestra cada elemento del array con html ( <tr><td><%=historia.responsable%></td> ... </tr>)
+
+bucle.ejs
+ejercicio del uso de plantilla ejs en html usando un ciclo "for" en el que añadimos un <li>

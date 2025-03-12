@@ -4,15 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
 </head>
 <style>
-
+body {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100vw;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1 {
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke: 2px black;
+    letter-spacing: 20px;
+}
+table {
+    border-collapse: collapse;
+    margin: auto;
+    text-align: left;
+}
+table td, table th {
+    border: 2px solid black;
+    border-spacing: 10px;
+    padding: 10px 20px; 
+}
+table th {
+    background-color: green;
+    color: white;
+}
+tr:nth-child(odd) {
+    background-color: rgb(209, 217, 226)  ;
+}
+table tr:last-child {
+    font-weight: bold;
+}
+table td:nth-child(4) {
+    max-width: 200px;
+}
 </style>
 <body>
+    <h1>LISTADO DE HISTORIAS 
+        <a href="/historiausuario" target="_blank" title="Añadir historia usuario">
+            <i class="fa-solid fa-square-plus fa-xl"></i>
+        </a>
+    </h1>
     <table>
         <tr>
             <th>Responsable</th>
-            <th>Fecha</th>
+            <th>Fecha captura</th>
             <th>Prioridad</th>
             <th>Historia</th>
         </tr>

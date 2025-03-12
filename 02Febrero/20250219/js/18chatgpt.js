@@ -3,6 +3,14 @@ main = document.querySelector("main")
 main.scrollTo(0, main.scrollHeight)
 texto = document.querySelector("#texto")
 texto.focus()
+pen = document.querySelector("#pen")
+
+function togglePen() {
+    if (texto.value.length > 0) {
+        pen.classList.add("fa-bounce")
+    } else
+        pen.classList.remove("fa-bounce")
+}
 
 function enviarMensaje() {
 //     document.querySelector("main").innerHTML += `
@@ -19,6 +27,7 @@ function enviarMensaje() {
         main.scrollTo(0, main.scrollHeight)
     }
     texto.focus()
+    pen.classList.remove("fa-bounce")
 }
 
 function addImage() {   

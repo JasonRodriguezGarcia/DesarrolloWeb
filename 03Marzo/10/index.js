@@ -270,17 +270,17 @@ app.get('/parcial', (req, res) => {
     res.status(200).render('parcial');
 });
 
-app.get('/historiausuario', (req, res) => {
+app.get('/historiaUsuario', (req, res) => {
     let mensajeError = { mensaje: "" }
-    res.render('historiausuario', { mensajeError });
+    res.render('historiaUsuario', { mensajeError });
 });
 
-app.post('/historiausuario', (req, res) => {
+app.post('/historiaUsuario', (req, res) => {
     console.log("Guardando datos:", req.body)
     const datosBody = req.body
     if (datosBody.responsable === "manuel") {
         let mensajeError = { mensaje: "Usuario manuel baneado !!!" }
-        res.render('historiausuario', { mensajeError });
+        res.render('historiaUsuario', { mensajeError });
     } else {
 
         // res.writeHead(302, {'Location': '/thanks'})

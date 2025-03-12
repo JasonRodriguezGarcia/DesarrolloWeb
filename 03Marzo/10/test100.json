@@ -1,1 +1,38 @@
-[{"historiaTXT":"holoa","prioridad":"Alta","fechaCaptura":"2025-03-27","responsable":"Antonio"},{"historiaTXT":"estamos aqui","prioridad":"Baja","fechaCaptura":"2025-03-27","responsable":"Iñigo"},{"historiaTXT":"asdfasdf","prioridad":"Baja","fechaCaptura":"2025-03-21","responsable":"Iñigo2"}]
+[
+    {
+        "historiaTXT": "holoa",
+        "prioridad": "Alta",
+        "fechaCaptura": "2025-03-27",
+        "responsable": "Antonio"
+    },
+    {
+        "historiaTXT": "estamos aqui",
+        "prioridad": "Baja",
+        "fechaCaptura": "2025-03-27",
+        "responsable": "Iñigo"
+    },
+    {
+        "historiaTXT": "Holo como etamo...",
+        "prioridad": "Media",
+        "fechaCaptura": "2025-03-07",
+        "responsable": "Pepeillo"
+    },
+    {
+        "historiaTXT": "uno más",
+        "prioridad": "Alta",
+        "fechaCaptura": "2025-03-14",
+        "responsable": "Maria de las Chalezas"
+    },
+    {
+        "historiaTXT": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic odit voluptatibus repellat ea eligendi. Nesciunt nostrum corporis adipisci distinctio minima dolorum quo nihil id. Magnam eaque voluptate sint consectetur vero.",
+        "prioridad": "Alta",
+        "fechaCaptura": "2025-03-12",
+        "responsable": "Yo mismo"
+    },
+    {
+        "historiaTXT": "otro más pa'lante",
+        "prioridad": "Alta",
+        "fechaCaptura": "2025-03-20",
+        "responsable": "Subijana"
+    }
+]

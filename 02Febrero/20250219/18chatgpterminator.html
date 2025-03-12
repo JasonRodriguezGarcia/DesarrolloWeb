@@ -156,13 +156,16 @@
         </p> -->
     </main>
     <footer>
-        <input type="text" name="texto" id="texto" placeholder="Enter text...">
+        <i id="pen" class="fa-solid fa-pen"></i>
+
+        <input oninput="togglePen()" type="text" name="texto" id="texto" placeholder="Enter text...">
+
         <button id="botonEnvio">Send</button>
 
         <label for="fichero"><i class="fa-solid fa-square-plus fa-xl"></i></label>
         <input type="file" id="fichero" onchange="addImage()" hidden accept="images/*">
 
-        </footer>
+    </footer>
 <script src="./js/18chatgpt.js"></script>
 </body>
 </html>
