@@ -1,0 +1,26 @@
+index.js, en views/partials (parcial.ejs, footer.ejs, header.ejs)
+index.js
+añadida ruta /parcial en el que presentamos (Render) un fichero parcial.ejs en el dentro que incluímos
+un "partial"(una "parte") de otros ficheros con código html como son "footer.ejs" y "header.ejs". Ficheros que
+podrían repetirse en otras páginas y así nos evitamos reescribir el mismo código más veces.
+EJS nos permite hacerlo con <%- include("partials/header") %> que al estar dentro de views (ya configurado en
+servidor index.js) lo encuentra.
+
+index.js, en /views (historiausuario.ejs, listadoHistorias.ejs) (ejercicio rematado el 11/03/2025)
+index.js
+añadida array arrHistoriasUsuarios en la que metemos los datos de un fichero .json leído mediante un fs.readFile
+al que al su evento "data" (que son los datos leéidos del fichero ) son tratados con JSON.parse(data.toString())
+que lo que hace es pasar de .json a objeto array
+añadida ruta para una petición GET a historiausuario que sería detectada por el servidor que devolvería historiausuario.ejs
+y así poder ejecutarlo cuando escribimos en url
+localhost:3001/historiausuario
+Dicho historiausuario.ejs presenta un formulario en ejs que al pulsar el botón hace una petición POST a historiausuario.ejs
+que sería detectada por el servidor que ejecuta el siguiente código:
+-   hace una validación a modo de prueba en servidor que si el responsable es "manuel" devuelve un mensaje de baneo a
+    historiausuario.ejs en el que ya dentro tiene código ejs que si tiene un valor muestre el mensaje (en modo cutre)
+-   si la validación es buena continua
+        - añadiendo el objeto req.body a la array de historias
+        - escribe en un fichero mediante fs.writeFile el arrHistoriasUsuarios tratado previamente de objeto array
+            a cadena .jsony
+        - presenta listadoHistorias.ejs al que le pasa el arrHistoriasUsuarios que ejecuta un ciclo en el que
+            muestra cada elemento del array con html ( <tr><td><%=historia.responsable%></td> ... </tr>)

@@ -24,32 +24,33 @@ app.set('views', path.join(__dirname, 'views'));
 
 ///////////////// borrar en el futuro
 
-const arrHistoriasUsuarios2 = [
-    {
-        historiaTXT: 'Hacer café',
-        prioridad: 'Alta',
-        fechaCaptura: '2025-03-11',
-        responsable: 'Pepeillo'
-    },
-    {
-        historiaTXT: 'Hacer mas café',
-        prioridad: 'Alta',
-        fechaCaptura: '2025-03-11',
-        responsable: 'Pepeillo'
-    },
-    {
-        historiaTXT: 'Que no falte el café',
-        prioridad: 'Alta',
-        fechaCaptura: '2025-03-11',
-        responsable: 'Pepeillo'
-    },
-    {
-        historiaTXT: 'Me muero si no hay café',
-        prioridad: 'Alta',
-        fechaCaptura: '2025-03-11',
-        responsable: 'Pepeillo'
-    },
-]
+// const arrHistoriasUsuarios2 = [
+//     {
+//         historiaTXT: 'Hacer café',
+//         prioridad: 'Alta',
+//         fechaCaptura: '2025-03-11',
+//         responsable: 'Pepeillo'
+//     },
+//     {
+//         historiaTXT: 'Hacer mas café',
+//         prioridad: 'Alta',
+//         fechaCaptura: '2025-03-11',
+//         responsable: 'Pepeillo'
+//     },
+//     {
+//         historiaTXT: 'Que no falte el café',
+//         prioridad: 'Alta',
+//         fechaCaptura: '2025-03-11',
+//         responsable: 'Pepeillo'
+//     },
+//     {
+//         historiaTXT: 'Me muero si no hay café',
+//         prioridad: 'Alta',
+//         fechaCaptura: '2025-03-11',
+//         responsable: 'Pepeillo'
+//     },
+// ]
+
 let arrHistoriasUsuarios = []
 fs.readFile("test100.json", "utf-8", (error, data) => {
     if (error) {
@@ -264,6 +265,7 @@ app.get('/bucle', (req, res) => {
 
     res.status(200).render('bucle', { numeros });
 });
+
 app.get('/parcial', (req, res) => {
     res.status(200).render('parcial');
 });
@@ -296,6 +298,7 @@ app.post('/historiausuario', (req, res) => {
         res.render('listadoHistorias', { arrHistoriasUsuarios });
     }
 });
+
 app.get('/listadoHistorias', (req, res) => {
     res.render('listadoHistorias', { arrHistoriasUsuarios });
 });
@@ -306,8 +309,6 @@ app.get('/listadoHistorias', (req, res) => {
 app.use((req, res) => {
     res.status(404).send("Error quillo: Página no existe");
 })
-
-//   });
 
 app.listen(3001, '127.0.0.1', () => {
     console.log('Server running in http://localhost:3001')
