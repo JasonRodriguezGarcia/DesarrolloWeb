@@ -25,6 +25,7 @@ table {
     border-collapse: collapse;
     margin: auto;
     text-align: left;
+    user-select: none;
 }
 table td, table th {
     border: 2px solid black;
@@ -44,6 +45,10 @@ table tr:last-child {
 table td:nth-child(4) {
     max-width: 200px;
 }
+table tr:hover {
+    background-color: lightgreen;
+    cursor: pointer;
+}
 </style>
 <body>
     <h1>LISTADO DE HISTORIAS 
@@ -59,7 +64,7 @@ table td:nth-child(4) {
             <th>Historia</th>
         </tr>
         <% arrHistoriasUsuarios.forEach(historia => {%>
-            <tr>
+            <tr class="lineaDatos">
                 <td><%=historia.responsable%></td>
                 <td><%=historia.fechaCaptura%></td>
                 <td><%=historia.prioridad%></td>
