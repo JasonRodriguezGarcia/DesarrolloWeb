@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+body {
+    margin: auto;
+    width: 70vw;
+    text-align: center;
+    background-color: slategray;
+}
+
+
+form {
+    margin:auto;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    gap: 15px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+#dialogo {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+</style>
+</head>
+<body>
+    <h1>EMPRESA TRANSPORTES</h1>
+
+    <form action="/transportes" method="POST">
+        <h3>Calculo Transporte</h3>
+        <label for="distancia">Distancia Km.</label>
+        <input type="number" name="distancia" id="distancia" min="1" max="1000"
+        placeholder="km (max. 1000km)"
+        >
+        <label for="peso">Peso Kgs.</label>
+        <input type="number" name="peso" id="peso" min="1" max="100"
+        placeholder="kg (max. 100kg)"
+        >
+        <label for="tipoDeTransporte">Tipo de Transporte</label>
+        <select name="tipoDeTransporte" id="tipoTransporte">
+            <option value="patinete">Patinete</option>
+            <option value="bicicleta">Bicicleta</option>
+        </select>
+        <button>Calcular</button>
+
+        <% console.log(calculo) %>
+    </form>
+</body>
+</html>
