@@ -16,8 +16,16 @@ ropa.push(camiseta2)
 
 // Get buttons from the DOM
 let body = document.querySelector("body")
+let mostrarBoton = document.querySelector("#mostrarBoton")
+let anadirBoton = document.querySelector("#anadirBoton")
+let mostrarRopa = false
 
-mostrarBoton.onclick = function() {
+debugger
+
+// mostrarBoton.onclick = function() {
+mostrarBoton.addEventListener("click", () => {
+    if (mostrarRopa) return
+    mostrarRopa = true
     console.log(ropa)
     let miUL = document.createElement("ul")
     for (const element of ropa) {
@@ -33,4 +41,8 @@ mostrarBoton.onclick = function() {
         miUL.appendChild(miLI)
     }
     body.appendChild(miUL)
-}
+})
+
+anadirBoton.addEventListener("click", () => {
+
+})
