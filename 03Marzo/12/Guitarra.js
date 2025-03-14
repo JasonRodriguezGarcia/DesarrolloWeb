@@ -24,6 +24,7 @@ class Guitarra {
 
     tocarMuyFuerte() {
         this.cuerdas --
+        console.log(`TING ... TING ... ${this.cuerdas} MUY FUERTE!!`.toUpperCase())
     }
 
 }

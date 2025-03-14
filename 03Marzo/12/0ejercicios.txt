@@ -1,0 +1,27 @@
+guitarra.html, Guitarra.js
+Guitarra.js contiene la definición de las clases. Hay una clase "padre" Guitarra y 1 clase "hija" GuitarraElectrica (herencia).
+La clase "padre" tiene varios atributos o propiedades marca y cuerdas (abstracion), un atributo privado 
+precioDeCoste (encapsulacion) y varios métodos mostrarPrecioDeVenta, tocar, tocarAlto, tocarMuyFuerte. La clase "hija"
+tiene además sus propios métodos. Se ve como hay que instanciar o asignar la clase a una variable con sus valores con:
+    const guitar = new Guitarra("Fender", 6)
+    const ge = new GuitarraElectrica("Fender", 6, true)
+Se puede acceder a sus atributos o propiedades con:
+    guitar.marca = "Les Paul"
+    console.log(guitar.marca)
+    console.log(ge.cuerdas)
+Se puede también acceder a sus métodos
+    guitar.tocar()
+    ge.enchufar()
+guitarra.html contiene la parte html con 2 input donde metemos los datos "marca" y "cuerdas", que al pulsar el boton "Tocar"
+se llama a la función tocarLaGuitarra que usa la clase Guitarra y su método tocar(), pero dentro de un <script> de 
+tipo "module" en el que se importan las clases Guitarra y GuitarraElectrica y que además con dicha funcion tocarLaGuitarra
+se le da acceso a window para poder usarse (un poco enrevesado)
+
+
+actividad-animal.html, animal.app.js, Animal.js (MEJOR EJEMPLO DE CLASES QUE GUITARRA)
+Animal.js contiene la definición de las clases. Hay una clase "padre" y 2 clases "hijas" (herencia). Dichos hijos tienen
+un método heredado del "padre" al que se ha cambiado (polimorfismo).
+animal.app.js contiene el JavaScript a usar en actividad-animal.html
+actividad-animal.html contiene un par de botones que usa JavaScript de animal.app.js importado de la siguiente manera
+    <script type="module" src="animal.app.js" defer></script>
+
