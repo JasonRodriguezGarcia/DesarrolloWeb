@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Button Example (XMLHttpRequest)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #content {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .noVisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ejercicio ajax2.html pero con fetch -->
+ 
+    <input type="text" name="usuario" id="usuario" placeholder="Introducir código usuario"><br>
+    <button id="loadButton">Buscar Usuario</button>
+    <i class="fa-solid fa-spinner fa-spin noVisible"></i>
+    <div id="content"></div>
+
+    <script>
+        icono = document.querySelector("i")
+        console.log(icono)
+        usuario = document.querySelector("#usuario")
+        document.getElementById('loadButton').addEventListener('click', function() {
+            // Create a new XMLHttpRequest object
+            icono.classList.remove("noVisible")
+            // setTimeout(()=>{console.log("esperando")}, 2000)
+            console.log(usuario.value)
+            // llamadaAPI()
+            fetch(`https://jsonplaceholder.typicode.com/users/${usuario.value}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                let htmlContent = '';
+                htmlContent += `
+                    <div class="post">
+                        <h3>${data.name}</h3>
+                        <p><b>Correo electrónico:</b> ${data.email}</p>
+                        <p><b>Dirección:</b> ${data.address.city}</p>
+                    </div>
+                `;
+                document.getElementById('content').innerHTML = htmlContent
+            })
+        });
+
+    </script>
+
+</body>
+</html>
