@@ -35,7 +35,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // se crea una funcion para ser utilizada más adelante
 // lo que hace esta función no es más que mostrar un texto LOGGER: con nuesta dirección url /
-// probar con /aboutus
 function logger(req, res, next) {
     console.log(`LOGGER: ${req.url}`);
     next(); // que continue ejecutando el resto del código, sin esto se para aquí
@@ -52,55 +51,55 @@ app.get('/', (req, res) => {
 });    
 
 
-// Prueba para capturar querystring, pegar la siguiente cadena en la barra del navegador
-// http://localhost:3001/querystring?nombre=Jason&edad=52&pais=spagne
-// devolverá una cadena json con los datos metidos
-// ruta también usada en el ejercicio index.html
-app.get('/querystring', (req, res) => {
-    // res.sendFile(path.join(__dirname, 'views', 'lose.html'));
-    console.log("querystring ...")
-    console.log(`${req.url} y ${req.method}`)
-    console.log(req.query)
-    // no hace falta usar url.parse(), destructura el req.query
-    const {nombre, edad, pais} = req.query;
-    if (nombre && edad && pais) {
-        console.log(`${nombre} tiene ${edad} años y es de ${pais}`)
-    } else {
-        console.log("FALTAN DATOS")
-    }
-    // res.json({resultado: 'ok'});
-    // devolvemos una cadena json
-    res.json({nombre: nombre, edad: edad, pais: pais})
-});
+// // Prueba para capturar querystring, pegar la siguiente cadena en la barra del navegador
+// // http://localhost:3001/querystring?nombre=Jason&edad=52&pais=spagne
+// // devolverá una cadena json con los datos metidos
+// // ruta también usada en el ejercicio index.html
+// app.get('/querystring', (req, res) => {
+//     // res.sendFile(path.join(__dirname, 'views', 'lose.html'));
+//     console.log("querystring ...")
+//     console.log(`${req.url} y ${req.method}`)
+//     console.log(req.query)
+//     // no hace falta usar url.parse(), destructura el req.query
+//     const {nombre, edad, pais} = req.query;
+//     if (nombre && edad && pais) {
+//         console.log(`${nombre} tiene ${edad} años y es de ${pais}`)
+//     } else {
+//         console.log("FALTAN DATOS")
+//     }
+//     // res.json({resultado: 'ok'});
+//     // devolvemos una cadena json
+//     res.json({nombre: nombre, edad: edad, pais: pais})
+// });
 
-app.get('/pedido', (req, res) => {
-    // devolvemos en la respuesta un fichero html
-    res.sendFile(path.join(__dirname, 'views', 'pedido.html'));
-});
-app.post('/pedido', (req, res) => {
-    console.log("POST:");
-    // en lugar de chunk usamos middleware de express que codifica el body
-    // express.urlencoded
-    console.log(req.body);
-    const {cantidad} = req.body;
-    console.log(`cantidad: ${cantidad}`);
-    // uso de lógica de negocios en back-end
-    let mensaje = "";
-    if (cantidad <= 100) {
-        // res.json({
-        //     mensaje: "El valor del pedido debe ser mayor a 100 para ser procesado."
-        // })
-        mensaje = "El valor del pedido debe ser mayor a 100 para ser procesado.";
-    } else if (cantidad > 500) {
-        // res.json({
-        //     mensaje: "El valor del pedido debe ser menor a 500 para ser procesado."
-        // })
-        mensaje = "El valor del pedido debe ser menor a 500 para ser procesado.";
-    } else
-        mensaje = "Gracias. Pedido procesado.";
-    res.status(200).render("resultado", {mensaje});
+// app.get('/pedido', (req, res) => {
+//     // devolvemos en la respuesta un fichero html
+//     res.sendFile(path.join(__dirname, 'views', 'pedido.html'));
+// });
+// app.post('/pedido', (req, res) => {
+//     console.log("POST:");
+//     // en lugar de chunk usamos middleware de express que codifica el body
+//     // express.urlencoded
+//     console.log(req.body);
+//     const {cantidad} = req.body;
+//     console.log(`cantidad: ${cantidad}`);
+//     // uso de lógica de negocios en back-end
+//     let mensaje = "";
+//     if (cantidad <= 100) {
+//         // res.json({
+//         //     mensaje: "El valor del pedido debe ser mayor a 100 para ser procesado."
+//         // })
+//         mensaje = "El valor del pedido debe ser mayor a 100 para ser procesado.";
+//     } else if (cantidad > 500) {
+//         // res.json({
+//         //     mensaje: "El valor del pedido debe ser menor a 500 para ser procesado."
+//         // })
+//         mensaje = "El valor del pedido debe ser menor a 500 para ser procesado.";
+//     } else
+//         mensaje = "Gracias. Pedido procesado.";
+//     res.status(200).render("resultado", {mensaje});
     
-});
+// });
 
 /////////////TRANSPORTES
 app.get('/transportes', (req, res) => {
@@ -121,13 +120,10 @@ app.post('/transportes', (req, res) => {
         tipoDeTransporte 
     )
     console.log(transporte.calcularCoste())
-    const calculo = transporte.calcularCoste()
+    const calculo = transporte.calcularCoste().toFixed(2)
     // res.sendFile(path.join(__dirname, 'views', 'transportes.html'));
     res.status(200).render("transportes", { calculo })
 });
-
-
-
 
 // más midleware
 // al final del todo SIEMPRE!!!!!!!!!!!!!!!

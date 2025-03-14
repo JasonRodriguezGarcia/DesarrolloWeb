@@ -9,8 +9,8 @@ class Transportes {
     }
     calcularCoste (){
         // return 'ok'
-        return `${this.distancia * this.peso * (this.tipoDeTransporte == "patinete" ? 
-                    this.#tarifa[0].precioTarifa : this.#tarifa[1].precioTarifa)}`
+        return this.distancia * this.peso * (this.tipoDeTransporte == "patinete" ? 
+                    this.#tarifa[0].precioTarifa : this.#tarifa[1].precioTarifa)
     }
 }
 

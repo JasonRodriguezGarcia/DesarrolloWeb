@@ -1,0 +1,29 @@
+server.js, /services/Transportes.js, /views/transportes.ejs
+
+Ejercicio en el que la idea es pasar datos de un formulario en transportes.ejs al server.js y hacer un cálculo con una
+clase y devolver el resultado a transportes.ejs
+
+-Transportes.js
+Contiene la definición de la clase Transporte con sus atributos o propiedades (distancia, peso, tipoDeTransporte) y su 
+método (calcularCoste) el cual devuelve un cálculo. OJO LA ÚLTIMA LÍNEA tiene que tener
+    export { Transportes }
+
+-transportes.ejs
+Para poder usar transportes.ejs, tendremos que poner en el navegador localhost:3001/transportes, lo cual genera una petición
+GET que es detectada por el server.js (que tiene que estar ejecutándose en la consola node-js y dicho server tiene que
+tener dicha petición GET ya configurada). También tenemos código ejs <%> en esta página para representar en un <p> el 
+valor de resultado, que en caso de tener valor se representa
+El formulario al pulsar enviar se ejecuta un submit con action="/transportes" method="POST" que es detectada por el servidor
+(ya configurado para dicha petición POST para /transportes).
+
+-server.js
+OJO EN LAS PRIMERAS LINEAS tiene que importarse la clase Transportes
+    import { Transportes } from "./services/Transportes.js"
+Contiene la petición GET de /transportes que entrega transportes (transportes.ejs) con la variable "resultado" que está
+vacía en .render("transportes", { calculo }). Dicha variable tiene que pasarse aunque sea en blanco, ya que es usada en
+transportes.ejs
+Contiene la petición POST de /transportes que trabaja con dicha petición recogiendo en varias variables el body del formulario, usando dichas variables
+instanciado la clase Transportes en "transporte". Luego usa el método calcularCoste() en "transporte" dejando el 
+resultado en "resultado". Después es devuelta en la respuesta (res.) junto con .status(200) la entrega de 
+transportes (transportes.ejs) con la variable resultado en .render("transportes", { calculo })
+

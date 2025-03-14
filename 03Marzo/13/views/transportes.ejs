@@ -53,7 +53,10 @@ form {
         </select>
         <button>Calcular</button>
 
-        <% console.log(calculo) %>
+        <% console.log("Calculo recibido en cliente: ", calculo) %>
+        <% if (calculo != "") { %>
+            <p>El resultado es <%=calculo%></p>
+        <%}%>
     </form>
 </body>
 </html>
