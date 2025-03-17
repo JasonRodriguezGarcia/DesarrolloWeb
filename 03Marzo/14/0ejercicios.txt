@@ -1,0 +1,16 @@
+
+Con la web jsonplaceholder.typicode.com usamos llamadas XMLHttpRequest. Más instrucciones para distintos tipos de 
+petición de datos en la propia web.
+
+ajax.html
+Ejercicio de una llamada AJAX con XMLHttpRequest() y GET, en el que se recibe una respuesta que se es 200 (OK) es tratada 
+mediante el típico JSON.parse para pasar de json a OBJETO y poder tratarse con un "map" que se rellena un código html que 
+se añade al "DIV content" y así se muestra
+
+ajax2.html
+Modificación del ejercicio anterior en el que en la llamada AJAX se usa el valor de un "input" que se añade a la cadena 
+de la llamada a XMLHttpRequest y así indicamos que queremos un código de usuario en concreto con la ruta /user/CODIGOUSUARIO
+
+ajax3.html
+prueba de asíncrono
+revisar el vídeo youtube https://www.youtube.com/watch?v=qJT2FY1jjjE

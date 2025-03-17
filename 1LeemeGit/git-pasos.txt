@@ -21,7 +21,7 @@ Con esto tenemos github sincronizado con nuestros ficheros en local
 *************************
 para bajarte una copia del git hub de tu nube a local
 
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY.git
 
 
 *************************
@@ -33,6 +33,7 @@ git pull
 para actualizar tu github de la nube
 hacer los pasos 1º 2º 3º
 *************************
+si da error de no acceso en local al hacer git push
 
 git config --global user.name "Jason RG"
 git config --global user.email "jasonrodriguezempleo@gmail.com"

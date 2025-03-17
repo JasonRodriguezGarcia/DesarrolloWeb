@@ -43,12 +43,14 @@
     <div id="content"></div>
 
     <script>
+        debugger
         icono = document.querySelector("i")
+        icono.style.fontSize = "40px"
+        icono.style.color = "blue"
         console.log(icono)
         document.getElementById('loadButton').addEventListener('click', function() {
             // Create a new XMLHttpRequest object
             icono.classList.remove("noVisible")
-            setTimeout(()=>{console.log("esperando")}, 2000)
             const xhr = new XMLHttpRequest();
             
             // Configure the request
@@ -64,32 +66,37 @@
                     // Loop through the data and create HTML content
                     // data.forEach(post => {
                         htmlContent += `
-                            <div class="post">
-                                <h3>${data.name}</h3>
-                                <p><b>Correo electrónico:</b> ${data.email}</p>
-                                <p><b>Dirección:</b> ${data.address.city}</p>
+                        <div class="post">
+                            <h3>${data.name}</h3>
+                            <p><b>Correo electrónico:</b> ${data.email}</p>
+                            <p><b>Dirección:</b> ${data.address.city}</p>
                             </div>
-                        `;
-                    // });
-                    // Insert the HTML content into the 'content' div
-                    document.getElementById('content').innerHTML = htmlContent;
-                } else {
-                    // If there's an error, display an error message
-                    console.error('Error fetching data:', xhr.status);
-                    document.getElementById('content').innerHTML = 'Error loading posts.';
-                }
-            };
-            
-            // Handle errors in the request
-            xhr.onerror = function() {
-                console.error('Request failed');
-                document.getElementById('content').innerHTML = 'Error loading posts.';
-            };
-            
-            // Send the request
-            xhr.send();
-        });
-    </script>
+                            `;
+                            // });
+                            // Insert the HTML content into the 'content' div
+                            document.getElementById('content').innerHTML = htmlContent;
+                        } else {
+                            // If there's an error, display an error message
+                            console.error('Error fetching data:', xhr.status);
+                            document.getElementById('content').innerHTML = 'Error loading posts.';
+                        }
+                    };
+                    
+                    // Handle errors in the request
+                    xhr.onerror = function() {
+                        console.error('Request failed');
+                        document.getElementById('content').innerHTML = 'Error loading posts.';
+                    };
+                    
+                    // Send the request
+                    xhr.send();
+                    setTimeout(()=>{
+                        console.log("esperando")
+                        icono.classList.add("noVisible")
+                    
+                    }, 2000)
+                });
+                </script>
 
 </body>
 </html>
