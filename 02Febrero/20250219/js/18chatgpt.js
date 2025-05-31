@@ -49,12 +49,8 @@ function addImage() {
             fileText = document.createElement("span")
             imagen.src = e.target.result
             imagen.title = fileNombre
-            // imagen.classList.add("textoInput", "ficheroMargenes")
-            // main.appendChild(imagen)
             fileText.innerHTML = fileNombre
             fileText.style.fontSize = "10px"
-            // fileText.classList.add("textoInput", "textoInputAnchura")
-            // main.appendChild(fileText)
             miDiv.appendChild(imagen)
             miDiv.appendChild(fileText)
             miDiv.classList.add("textoInput", "textoImagenTextoAnchura")
